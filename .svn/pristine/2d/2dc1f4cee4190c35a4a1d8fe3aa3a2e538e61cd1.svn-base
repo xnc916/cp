@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\default_head_bar_back_img.xml",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\layout-v21\\default_head_bar_back_img.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\default_head_bar_back.xml",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\layout-v21\\default_head_bar_back.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\default_head_bar_view.xml",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\layout-v21\\default_head_bar_view.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\layout-v21\\notification_action.xml"
+    }
+]

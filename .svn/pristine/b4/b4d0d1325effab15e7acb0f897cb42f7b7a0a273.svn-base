@@ -1,0 +1,69 @@
+package com.xiongyuan.lottery.secondpage.fragment;
+
+import android.content.Intent;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.LoginActivity;
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.bean.LoginEvent;
+import com.xiongyuan.lottery.secondpage.activity.MoreActivity;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class SecondFragment extends BaseFragment {
+    @BindView(R.id.title_name)
+    TextView titleName;
+
+    private boolean isLogin = false;
+    private String userId;
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_main_second;
+
+    }
+
+    @Override
+    public void initView() {
+        titleName.setText("天天有礼");
+
+
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        isLogin = event.isLogin();
+        if (isLogin) {
+            userId = event.getUserId();
+        }
+        //将获取的数据展示在界面上
+        Log.e("---","---"+event);
+    }
+    @OnClick({R.id.btn})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.btn:
+                if (isLogin){
+                    Intent intent=new Intent(getActivity(),MoreActivity.class);
+                    intent.putExtra("uid",userId);
+                    startActivity(intent);
+                }else {
+                    Intent intents = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(intents);
+                }
+                break;
+        }
+    }
+
+}

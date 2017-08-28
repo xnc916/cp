@@ -1,0 +1,93 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import com.baoyz.swipemenulistview.SwipeMenuListView;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class DetailsActivity_ViewBinding implements Unbinder {
+  private DetailsActivity target;
+
+  private View view2131558724;
+
+  @UiThread
+  public DetailsActivity_ViewBinding(DetailsActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public DetailsActivity_ViewBinding(final DetailsActivity target, View source) {
+    this.target = target;
+
+    View view;
+    target.linear2_1 = Utils.findRequiredViewAsType(source, 2131558558, "field 'linear2_1'", LinearLayout.class);
+    target.listView = Utils.findRequiredViewAsType(source, 2131558569, "field 'listView'", SwipeMenuListView.class);
+    target.et = Utils.findRequiredViewAsType(source, 2131558560, "field 'et'", EditText.class);
+    target.et1 = Utils.findRequiredViewAsType(source, 2131558562, "field 'et1'", EditText.class);
+    target.et2 = Utils.findRequiredViewAsType(source, 2131558564, "field 'et2'", EditText.class);
+    target.linear3 = Utils.findRequiredViewAsType(source, 2131558568, "field 'linear3'", LinearLayout.class);
+    target.et3 = Utils.findRequiredViewAsType(source, 2131558566, "field 'et3'", EditText.class);
+    target.content = Utils.findRequiredViewAsType(source, 2131558555, "field 'content'", EditText.class);
+    target.title = Utils.findRequiredViewAsType(source, 2131558554, "field 'title'", TextView.class);
+    target.tv = Utils.findRequiredViewAsType(source, 2131558559, "field 'tv'", TextView.class);
+    target.tv1 = Utils.findRequiredViewAsType(source, 2131558561, "field 'tv1'", TextView.class);
+    target.linear4 = Utils.findRequiredViewAsType(source, 2131558570, "field 'linear4'", RelativeLayout.class);
+    target.linear2 = Utils.findRequiredViewAsType(source, 2131558557, "field 'linear2'", LinearLayout.class);
+    target.tv2 = Utils.findRequiredViewAsType(source, 2131558563, "field 'tv2'", TextView.class);
+    target.btn = Utils.findRequiredViewAsType(source, 2131558556, "field 'btn'", Button.class);
+    target.linear1 = Utils.findRequiredViewAsType(source, 2131558553, "field 'linear1'", LinearLayout.class);
+    target.tv3 = Utils.findRequiredViewAsType(source, 2131558565, "field 'tv3'", TextView.class);
+    target.btn1 = Utils.findRequiredViewAsType(source, 2131558567, "field 'btn1'", Button.class);
+    target.textView = Utils.findRequiredViewAsType(source, 2131558725, "field 'textView'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558724, "method 'click'");
+    view2131558724 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    DetailsActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.linear2_1 = null;
+    target.listView = null;
+    target.et = null;
+    target.et1 = null;
+    target.et2 = null;
+    target.linear3 = null;
+    target.et3 = null;
+    target.content = null;
+    target.title = null;
+    target.tv = null;
+    target.tv1 = null;
+    target.linear4 = null;
+    target.linear2 = null;
+    target.tv2 = null;
+    target.btn = null;
+    target.linear1 = null;
+    target.tv3 = null;
+    target.btn1 = null;
+    target.textView = null;
+
+    view2131558724.setOnClickListener(null);
+    view2131558724 = null;
+  }
+}

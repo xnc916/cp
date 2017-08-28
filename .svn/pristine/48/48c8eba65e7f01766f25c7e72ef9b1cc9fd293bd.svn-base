@@ -1,0 +1,72 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class CashTransactionActivity_ViewBinding implements Unbinder {
+  private CashTransactionActivity target;
+
+  private View view2131558704;
+
+  private View view2131558702;
+
+  @UiThread
+  public CashTransactionActivity_ViewBinding(CashTransactionActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public CashTransactionActivity_ViewBinding(final CashTransactionActivity target, View source) {
+    this.target = target;
+
+    View view;
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558703, "field 'titleName'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558704, "field 'titleRight' and method 'click'");
+    target.titleRight = Utils.castView(view, 2131558704, "field 'titleRight'", TextView.class);
+    view2131558704 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.mViewPager = Utils.findRequiredViewAsType(source, 2131558548, "field 'mViewPager'", ViewPager.class);
+    target.mTabLayout = Utils.findRequiredViewAsType(source, 2131558547, "field 'mTabLayout'", TabLayout.class);
+    view = Utils.findRequiredView(source, 2131558702, "method 'click'");
+    view2131558702 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    CashTransactionActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.titleName = null;
+    target.titleRight = null;
+    target.mViewPager = null;
+    target.mTabLayout = null;
+
+    view2131558704.setOnClickListener(null);
+    view2131558704 = null;
+    view2131558702.setOnClickListener(null);
+    view2131558702 = null;
+  }
+}

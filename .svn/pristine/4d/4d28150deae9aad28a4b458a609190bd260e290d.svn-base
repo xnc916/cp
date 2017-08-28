@@ -1,0 +1,21 @@
+package com.xiongyuan.lottery.mypage.bean;
+
+/**
+ * Created by gameben on 2017-07-10.
+ */
+
+public class User {
+
+        private String user_id;
+
+
+
+    public String getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(String user_id) {
+            this.user_id = user_id;
+        }
+
+}

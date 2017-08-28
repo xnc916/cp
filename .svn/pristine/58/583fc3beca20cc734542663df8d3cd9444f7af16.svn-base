@@ -1,0 +1,80 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class RegisterLinkActivity_ViewBinding implements Unbinder {
+  private RegisterLinkActivity target;
+
+  private View view2131558628;
+
+  private View view2131558712;
+
+  @UiThread
+  public RegisterLinkActivity_ViewBinding(RegisterLinkActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public RegisterLinkActivity_ViewBinding(final RegisterLinkActivity target, View source) {
+    this.target = target;
+
+    View view;
+    view = Utils.findRequiredView(source, 2131558628, "field 'button' and method 'click'");
+    target.button = Utils.castView(view, 2131558628, "field 'button'", Button.class);
+    view2131558628 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.radiogroup = Utils.findRequiredViewAsType(source, 2131558623, "field 'radiogroup'", RadioGroup.class);
+    target.hightet = Utils.findRequiredViewAsType(source, 2131558626, "field 'hightet'", EditText.class);
+    target.shortet = Utils.findRequiredViewAsType(source, 2131558627, "field 'shortet'", EditText.class);
+    target.dlrbutton = Utils.findRequiredViewAsType(source, 2131558624, "field 'dlrbutton'", RadioButton.class);
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558713, "field 'titleName'", TextView.class);
+    target.phrbutton = Utils.findRequiredViewAsType(source, 2131558625, "field 'phrbutton'", RadioButton.class);
+    view = Utils.findRequiredView(source, 2131558712, "method 'click'");
+    view2131558712 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    RegisterLinkActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.button = null;
+    target.radiogroup = null;
+    target.hightet = null;
+    target.shortet = null;
+    target.dlrbutton = null;
+    target.titleName = null;
+    target.phrbutton = null;
+
+    view2131558628.setOnClickListener(null);
+    view2131558628 = null;
+    view2131558712.setOnClickListener(null);
+    view2131558712 = null;
+  }
+}

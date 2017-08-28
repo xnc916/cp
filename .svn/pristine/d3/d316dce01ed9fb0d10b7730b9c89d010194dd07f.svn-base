@@ -1,0 +1,148 @@
+package com.xiongyuan.lottery.thirdpage.activity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.customview.LoadingDialog;
+import com.xiongyuan.lottery.thirdpage.adapter.LotteryDetailsAdapter;
+import com.xiongyuan.lottery.thirdpage.bean.ArcList;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Response;
+
+public class LotteryDetailsActivity extends BaseActivity {
+    private LoadingDialog loadingDialog;
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.list_lottery_details)
+    ListView listView;
+    private LotteryDetailsAdapter adapter;
+    private ArrayList<ArcList> list=new ArrayList<>();
+    private String name;
+    private int img;
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_lottery_details;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+
+        titleName.setText("开奖详情");
+        adapter=new LotteryDetailsAdapter(LotteryDetailsActivity.this);
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void initData() {
+        name = getIntent().getStringExtra("name");
+        String ss = getIntent().getStringExtra("img");
+
+        img = Integer.valueOf(ss);
+
+        getCodeHistory( getIntent().getStringExtra("gameId"));
+
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+    //取得历史开奖号码
+    public void  getCodeHistory(String gameId) {
+        if (loadingDialog != null)
+            loadingDialog.show();
+        else {
+            loadingDialog = new LoadingDialog(LotteryDetailsActivity.this, "加载中");
+            loadingDialog.show();
+        }
+        OkHttpUtils.post()
+                .url(Constant.URL)
+                .addParams("action", "Games.getCodeHistory")
+                .addParams("length", "10")
+                .addParams("page", "1")
+                .addParams("game_id", gameId)
+                .build()
+                .execute(new Callback<String>() {
+                    @Override
+                    public String parseNetworkResponse(Response response, int i) throws Exception {
+                        String s = response.body().string();
+                        return s;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        ToastUtils.showToast(LotteryDetailsActivity.this, "网络错误");
+                        if (loadingDialog != null)
+                            loadingDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onResponse(String o, int i) {
+                        Log.e("==-取得历史开奖号码-==", o + "---");
+                        if (loadingDialog != null)
+                            loadingDialog.dismiss();
+                        try {
+                            JSONObject jsonObject = new JSONObject(o);
+                            String errormsg = jsonObject.optString("errormsg");
+                            if (errormsg.equals("")) {
+                                JSONArray jsonArray = jsonObject.optJSONArray("result");
+                                for (int j = 0; j < jsonArray.length(); j++) {
+                                    JSONObject object = jsonArray.optJSONObject(j);
+                                    String endTime = object.optString("endTime");
+                                    String code = object.optString("code");
+                                    String[] strings = convertStrToArray(code);
+                                    String issue = object.optString("issue");
+                                    list.add(new ArcList(issue, stampToDate(endTime), strings.length, strings,name,img));
+                                }
+                                adapter.refresh(list);
+                            } else {
+                                ToastUtils.showToast(LotteryDetailsActivity.this, errormsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+    }
+    /*
+       * 将时间戳转换为时间
+       */
+    public static String stampToDate(String s){
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        long lt = Long.valueOf(s);
+        Date date = new Date(lt*1000);
+        res = simpleDateFormat.format(date);
+        return res;
+    }
+    //拆分字符返回数组
+    public static String[] convertStrToArray(String str){
+        String[] strArray = null;
+        strArray = str.split(","); //拆分字符为"," ,然后把结果交给数组strArray
+        return strArray;
+    }
+    }

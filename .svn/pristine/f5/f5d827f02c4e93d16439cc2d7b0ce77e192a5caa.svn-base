@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    
+    <color name="colorBottomBarBackground">#efefef</color>
+    <color name="contentColor">#727171</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="mainBackgroundColor">#eb413d</color>
+    <color name="contentColorTwo">#9E9F9F</color>
+    <color name="colorSelect">#EE5C5C</color>
+
+    <color name="btn_red_color">#F05165</color>
+    <color name="colorTabbar">#ff6d00</color>
+
+    <color name="homeColorBackground">#f4f4f4</color>
+    <color name="SelectedTextColor">#ED413F</color>
+    <color name="IndicatorColor">#ED5955</color>
+
+    <color name="transparent_pink">#24ff0066</color>
+    <color name="item_bg">#f4f4f4</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_half">#23000000</color>
+    <color name="transparent_h">#4d000000</color>
+    <color name="gap_line">#e6e6e6</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_777572">#777572</color>
+    <color name="toastcolor">#cd494949</color>
+</resources>

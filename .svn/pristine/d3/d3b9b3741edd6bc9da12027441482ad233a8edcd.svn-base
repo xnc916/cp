@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xiongyuan.lottery"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.xiongyuan.lottery.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.xiongyuan.lottery.secondpage.activity.MoreActivity" />
+        <activity android:name="com.xiongyuan.lottery.Main2Activity" />
+        <activity android:name="com.xiongyuan.lottery.homepage.activity.PKActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.PersonalInformationActivity" />
+        <activity android:name="com.xiongyuan.lottery.LoginActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.MySettings" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.ProxyAccountActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.TeamReportActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.PersonalActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.StatisticsTodayActivity" />
+        <activity android:name="com.xiongyuan.lottery.homepage.activity.TextItemActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.MyMessageActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.CashTransactionActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.FlowDetailsActivity" />
+        <activity
+            android:name="com.xiongyuan.lottery.mypage.activity.QRCodeActivity"
+            android:theme="@style/QRcodeTheme" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.DetailsActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.RegisterLinkActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.WithdrawalActivity" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 集成line客户端登录授权，需要添如下格式的过滤器 -->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="com.xiongyuan.lottery.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.withdrawal.WithdrawalActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.DrawMoneyActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.ReadMessageActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.HelpCenterActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.ModifyRebateActivity" />
+        <activity android:name="com.xiongyuan.lottery.thirdpage.activity.LotteryDetailsActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.AddManageDetails" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.DrawMoneyActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.HelpeCenterNewActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.HelpCenterNewtActivity" />
+        <activity android:name="com.xiongyuan.lottery.secondpage.activity.EventdetailsActivity" />
+        <activity android:name="com.xiongyuan.lottery.mypage.activity.RecordNumberActivity" />
+    </application>
+
+</manifest>

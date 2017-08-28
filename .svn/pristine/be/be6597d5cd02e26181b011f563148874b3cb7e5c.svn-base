@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\lottery\\trunk\\App\\WheelView\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_base_content.xml",
+        "source": "E:\\lottery\\trunk\\App\\WheelView\\build\\intermediates\\bundles\\debug\\res\\layout\\view_base_content.xml"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\WheelView\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\view_address_picker.xml",
+        "source": "E:\\lottery\\trunk\\App\\WheelView\\build\\intermediates\\bundles\\debug\\res\\layout\\view_address_picker.xml"
+    }
+]

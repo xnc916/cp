@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WheelItemView">
+        <attr name="wheel_item_view_gravity" format="enum">
+            <enum name="center" value="0x11" />
+            <enum name="left" value="0x03" />
+            <enum name="right" value="0x05" />
+        </attr>
+        <attr name="wheel_item_view_unselect_textsize" format="dimension" />
+        <attr name="wheel_item_view_select_textsize" format="dimension" />
+        <attr name="wheel_item_view_unselect_textcolor" format="color" />
+        <attr name="wheel_item_view_select_textcolor" format="color" />
+        <attr name="wheel_item_view_background" format="color" />
+    </declare-styleable>
+</resources>

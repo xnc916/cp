@@ -1,0 +1,35 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ListView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class FragmentSubordinateAccount_ViewBinding implements Unbinder {
+  private FragmentSubordinateAccount target;
+
+  @UiThread
+  public FragmentSubordinateAccount_ViewBinding(FragmentSubordinateAccount target, View source) {
+    this.target = target;
+
+    target.refreshLayout = Utils.findRequiredViewAsType(source, 2131558711, "field 'refreshLayout'", TwinklingRefreshLayout.class);
+    target.listView = Utils.findRequiredViewAsType(source, 2131558723, "field 'listView'", ListView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    FragmentSubordinateAccount target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.refreshLayout = null;
+    target.listView = null;
+  }
+}

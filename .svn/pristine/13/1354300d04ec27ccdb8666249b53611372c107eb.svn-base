@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/time_cycle" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent" />
+        </LinearLayout>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center_vertical"
+               android:layout_centerInParent="true"
+               android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_personal_left"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_333333"
+                android:text="主账户余额（元）"/>
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_weight="0.7"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:id="@+id/tv_personal_right"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@android:color/holo_red_light"
+                       android:textSize="14sp"
+                       android:text="8.0"/>
+                   <TextView
+                       android:id="@+id/tv_personal_view"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@android:color/holo_red_light"
+                       android:textSize="14sp"
+                       android:visibility="gone"
+                       android:text="/"/>
+                   <TextView
+                       android:id="@+id/tv_personal_right_right"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@android:color/holo_red_light"
+                       android:textSize="14sp"
+                       android:visibility="gone"
+                       android:text="8.0"/>
+               </LinearLayout>
+
+               <ImageView
+                   android:id="@+id/iv_personal_item"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="10dp"
+                   android:visibility="invisible"
+                   android:background="@mipmap/buy_lottery_guide"
+                   android:padding="5dp"
+                   android:scaleX="0.7"
+                   android:scaleY="0.7" />
+           </LinearLayout>
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/line_size"
+               android:background="@color/gap_line"
+               android:layout_alignParentBottom="true"/>
+       </RelativeLayout>
+
+</LinearLayout>

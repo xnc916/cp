@@ -1,0 +1,55 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.thirdpage.adapter;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class MyListViewAdapter$ViewHolder_ViewBinding implements Unbinder {
+  private MyListViewAdapter.ViewHolder target;
+
+  @UiThread
+  public MyListViewAdapter$ViewHolder_ViewBinding(MyListViewAdapter.ViewHolder target,
+      View source) {
+    this.target = target;
+
+    target.ll_ = Utils.findRequiredViewAsType(source, 2131558642, "field 'll_'", LinearLayout.class);
+    target.tv = Utils.findRequiredViewAsType(source, 2131558638, "field 'tv'", TextView.class);
+    target.ll1_ = Utils.findRequiredViewAsType(source, 2131558647, "field 'll1_'", LinearLayout.class);
+    target.tvIssue = Utils.findRequiredViewAsType(source, 2131558639, "field 'tvIssue'", TextView.class);
+    target.tvDate = Utils.findRequiredViewAsType(source, 2131558640, "field 'tvDate'", TextView.class);
+    target.tvqDate = Utils.findRequiredViewAsType(source, 2131558645, "field 'tvqDate'", TextView.class);
+    target.ll1 = Utils.findRequiredViewAsType(source, 2131558646, "field 'll1'", LinearLayout.class);
+    target.ll = Utils.findRequiredViewAsType(source, 2131558641, "field 'll'", LinearLayout.class);
+    target.tvq = Utils.findRequiredViewAsType(source, 2131558643, "field 'tvq'", TextView.class);
+    target.tvqIssue = Utils.findRequiredViewAsType(source, 2131558644, "field 'tvqIssue'", TextView.class);
+    target.imageView = Utils.findRequiredViewAsType(source, 2131558637, "field 'imageView'", ImageView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    MyListViewAdapter.ViewHolder target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.ll_ = null;
+    target.tv = null;
+    target.ll1_ = null;
+    target.tvIssue = null;
+    target.tvDate = null;
+    target.tvqDate = null;
+    target.ll1 = null;
+    target.ll = null;
+    target.tvq = null;
+    target.tvqIssue = null;
+    target.imageView = null;
+  }
+}

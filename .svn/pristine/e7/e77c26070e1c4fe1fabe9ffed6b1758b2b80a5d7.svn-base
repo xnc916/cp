@@ -1,0 +1,45 @@
+package com.xiongyuan.lottery.secondpage.activity;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class EventdetailsActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titlename;
+    @BindView(R.id.event_detail_tv)
+    TextView eventdetail;
+
+    private String title;
+    private String content;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_eventdetails;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titlename.setText(title);
+        eventdetail.setText(content);
+
+    }
+
+    @Override
+    public void initData() {
+        title = getIntent().getStringExtra("title");
+        content = getIntent().getStringExtra("content");
+
+    }
+
+    @OnClick(R.id.title_left)
+    public void click(){
+        finish();
+    }
+
+}

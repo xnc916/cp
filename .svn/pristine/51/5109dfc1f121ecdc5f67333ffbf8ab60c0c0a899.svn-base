@@ -1,0 +1,30 @@
+package com.xiongyuan.lottery.homepage.bean.pkdata;
+
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Created by gameben on 2017-06-10.
+ */
+
+public class PkResult {
+    @SerializedName("errormsg")
+    private String pk_errormsg;
+    @SerializedName("result")
+    private ResultBean pk_result;
+    private int TIME;
+
+    public String getPk_errormsg() {
+        return pk_errormsg;
+    }
+
+    public ResultBean getPk_result() {
+        return pk_result;
+    }
+    public int getTIME() {
+        return TIME;
+    }
+
+    public void setTIME(int TIME) {
+        this.TIME = TIME;
+    }
+}

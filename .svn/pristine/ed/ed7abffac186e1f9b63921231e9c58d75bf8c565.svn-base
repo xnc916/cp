@@ -1,0 +1,68 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTodayRecharge;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class StatisticsTodayActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private List<String> tabTitles = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_statistics_today;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titleName.setText("今日统计");
+        for (int i=0;i<7;i++) {
+            mFragments.add(new FragmentTodayRecharge());
+        }
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(0);
+    }
+
+    @Override
+    public void initData() {
+        tabTitles.add("今日充值");
+        tabTitles.add("今日取款");
+        tabTitles.add("今日返点");
+        tabTitles.add("今日投注");
+        tabTitles.add("今日中奖");
+        tabTitles.add("今日盈亏");
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+}

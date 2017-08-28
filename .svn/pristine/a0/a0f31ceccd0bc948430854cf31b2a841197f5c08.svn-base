@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SimpleNumberPicker">
+        <attr format="integer" name="min_number"/>
+    </declare-styleable>
+</resources>

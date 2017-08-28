@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:id="@+id/merge_sales"
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <TextView android:id="@+id/tv_table_title_0"
+              style="@style/TextView_Table_Right"
+              android:text="用户等级"/>
+
+    <TextView android:id="@+id/tv_table_title_1"
+              style="@style/TextView_Table_Right"
+              android:text="充值金额"/>
+
+    <TextView android:id="@+id/tv_table_title_2"
+              style="@style/TextView_Table_Right"
+              android:text="取款金额"/>
+
+    <TextView android:id="@+id/tv_table_title_3"
+              style="@style/TextView_Table_Right"
+              android:text="投注金额"/>
+
+    <TextView android:id="@+id/tv_table_title_4"
+              style="@style/TextView_Table_Right"
+              android:text="中奖金额"/>
+
+    <TextView android:id="@+id/tv_table_title_5"
+              style="@style/TextView_Table_Right"
+              android:text="赠点金额"/>
+
+    <TextView android:id="@+id/tv_table_title_6"
+              style="@style/TextView_Table_Right"
+              android:text="返点金额"/>
+
+    <TextView android:id="@+id/tv_table_title_7"
+              style="@style/TextView_Table_Right"
+              android:text="盈亏"/>
+
+</merge>

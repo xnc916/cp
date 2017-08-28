@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\indicator\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\c797edec1e257ac0c8fe05487ca73b0317168ad1\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    }
+]

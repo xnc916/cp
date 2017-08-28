@@ -1,0 +1,119 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTodayRecharge;
+import com.xiongyuan.lottery.mypage.view.Mypopupwindow;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class CashTransactionActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.title_right)
+    TextView titleright;
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private int tag;
+    private int curTab=0;
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private List<String> tabTitles = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_cash_transaction;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        for(int i=0; i<tabTitles.size(); i++){
+            FragmentTodayRecharge fragment = new FragmentTodayRecharge(curTab);
+            fragment.setTabPos(i);
+            mFragments.add(fragment);
+        }
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(curTab);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //滑动监听加载数据，一次只加载一个标签页
+                ((FragmentTodayRecharge)mAdapter.getItem(position)).sendMessage();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
+    @Override
+    public void initData() {
+        titleName.setText("购彩记录");
+        titleright.setCompoundDrawables(null,null,null,null);
+        titleright.setVisibility(View.VISIBLE);
+        titleright.setText("全部");
+        tag = getIntent().getIntExtra("tag", 0);
+        String tab1 = getIntent().getStringExtra("curTab");
+        curTab = Integer.valueOf(tab1);
+        tabTitles.add("全部");
+        tabTitles.add("撤单");
+        tabTitles.add("未开奖");
+        tabTitles.add("已封单");
+        tabTitles.add("已开奖");
+        tabTitles.add("已中奖");
+    }
+    @OnClick({R.id.title_left,R.id.title_right})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+            case R.id.title_right:
+                Mypopupwindow mypopupwindow = new Mypopupwindow(this);
+                WindowManager manager=(WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                //获取xoff
+                int xpos=manager.getDefaultDisplay().getWidth()/2-mypopupwindow.getWidth()/2;
+                //xoff,yoff基于anchor的左下角进行偏移。
+                mypopupwindow.showAsDropDown(titleright,xpos, 30);
+                mypopupwindow.show(new Mypopupwindow.OnConfirmListener() {
+                    @Override
+                    public void onConfirm(String xuan) {
+                        titleright.setText(xuan);
+                        mypopupwindow.onDismiss();
+                    }
+                });
+
+                break;
+
+        }
+    }
+
+}

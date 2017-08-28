@@ -1,0 +1,46 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.adapter;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class DrawMoneyAdapter$ViewHolder_ViewBinding implements Unbinder {
+  private DrawMoneyAdapter.ViewHolder target;
+
+  @UiThread
+  public DrawMoneyAdapter$ViewHolder_ViewBinding(DrawMoneyAdapter.ViewHolder target, View source) {
+    this.target = target;
+
+    target.darwTv2 = Utils.findRequiredViewAsType(source, 2131558654, "field 'darwTv2'", TextView.class);
+    target.darwTv8 = Utils.findRequiredViewAsType(source, 2131558660, "field 'darwTv8'", TextView.class);
+    target.darwTv4 = Utils.findRequiredViewAsType(source, 2131558656, "field 'darwTv4'", TextView.class);
+    target.darwTv6 = Utils.findRequiredViewAsType(source, 2131558658, "field 'darwTv6'", TextView.class);
+    target.darwTv5 = Utils.findRequiredViewAsType(source, 2131558657, "field 'darwTv5'", TextView.class);
+    target.darwTv7 = Utils.findRequiredViewAsType(source, 2131558659, "field 'darwTv7'", TextView.class);
+    target.darwTv1 = Utils.findRequiredViewAsType(source, 2131558653, "field 'darwTv1'", TextView.class);
+    target.darwTv3 = Utils.findRequiredViewAsType(source, 2131558655, "field 'darwTv3'", TextView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    DrawMoneyAdapter.ViewHolder target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.darwTv2 = null;
+    target.darwTv8 = null;
+    target.darwTv4 = null;
+    target.darwTv6 = null;
+    target.darwTv5 = null;
+    target.darwTv7 = null;
+    target.darwTv1 = null;
+    target.darwTv3 = null;
+  }
+}

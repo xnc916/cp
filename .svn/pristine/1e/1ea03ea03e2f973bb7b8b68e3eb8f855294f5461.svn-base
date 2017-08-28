@@ -1,0 +1,235 @@
+[
+    {
+        "outputFile": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1523,
+                    "endColumn": 50,
+                    "endOffset": 1569
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1523,
+                        "endColumn": 50,
+                        "endOffset": 1569
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1574,
+                    "endColumn": 44,
+                    "endOffset": 1614
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1574,
+                        "endColumn": 44,
+                        "endOffset": 1614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1619,
+                    "endColumn": 47,
+                    "endOffset": 1662
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1619,
+                        "endColumn": 47,
+                        "endOffset": 1662
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1667,
+                    "endColumn": 49,
+                    "endOffset": 1712
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1667,
+                        "endColumn": 49,
+                        "endOffset": 1712
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1717,
+                    "endColumn": 50,
+                    "endOffset": 1763
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1717,
+                        "endColumn": 50,
+                        "endOffset": 1763
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1768,
+                    "endColumn": 47,
+                    "endOffset": 1811
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1768,
+                        "endColumn": 47,
+                        "endOffset": 1811
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1816,
+                    "endColumn": 47,
+                    "endOffset": 1859
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1816,
+                        "endColumn": 47,
+                        "endOffset": 1859
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1864,
+                    "endColumn": 44,
+                    "endOffset": 1904
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1864,
+                        "endColumn": 44,
+                        "endOffset": 1904
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1909,
+                    "endColumn": 46,
+                    "endOffset": 1951
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1909,
+                        "endColumn": 46,
+                        "endOffset": 1951
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1956,
+                    "endColumn": 46,
+                    "endOffset": 1998
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1956,
+                        "endColumn": 46,
+                        "endOffset": 1998
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 2003,
+                    "endColumn": 51,
+                    "endOffset": 2050
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 2003,
+                        "endColumn": 51,
+                        "endOffset": 2050
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 2055,
+                    "endColumn": 38,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 2055,
+                        "endColumn": 38,
+                        "endOffset": 2089
+                    }
+                }
+            }
+        ]
+    }
+]

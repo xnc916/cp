@@ -1,0 +1,46 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.adapter;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import de.hdodenhof.circleimageview.CircleImageView;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class MyTeamAdapter$ViewHolder_ViewBinding implements Unbinder {
+  private MyTeamAdapter.ViewHolder target;
+
+  @UiThread
+  public MyTeamAdapter$ViewHolder_ViewBinding(MyTeamAdapter.ViewHolder target, View source) {
+    this.target = target;
+
+    target.ivOnline = Utils.findRequiredViewAsType(source, 2131558628, "field 'ivOnline'", ImageView.class);
+    target.tvMinRebate = Utils.findRequiredViewAsType(source, 2131558636, "field 'tvMinRebate'", TextView.class);
+    target.ivTou = Utils.findRequiredViewAsType(source, 2131558627, "field 'ivTou'", CircleImageView.class);
+    target.tvUserName = Utils.findRequiredViewAsType(source, 2131558630, "field 'tvUserName'", TextView.class);
+    target.tvMaxRebate = Utils.findRequiredViewAsType(source, 2131558635, "field 'tvMaxRebate'", TextView.class);
+    target.tvUsable = Utils.findRequiredViewAsType(source, 2131558633, "field 'tvUsable'", TextView.class);
+    target.ivType = Utils.findRequiredViewAsType(source, 2131558631, "field 'ivType'", ImageView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    MyTeamAdapter.ViewHolder target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.ivOnline = null;
+    target.tvMinRebate = null;
+    target.ivTou = null;
+    target.tvUserName = null;
+    target.tvMaxRebate = null;
+    target.tvUsable = null;
+    target.ivType = null;
+  }
+}

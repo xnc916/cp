@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_777572">
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:text="1"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size"
+        android:background="@color/gap_line" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:text="2"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size"
+        android:background="@color/gap_line" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:text="3"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size"
+        android:background="@color/gap_line" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:text="4"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size"
+        android:background="@color/gap_line" />
+
+</LinearLayout>

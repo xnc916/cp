@@ -1,0 +1,316 @@
+package com.xiongyuan.lottery.mypage.fragment;
+
+
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+import com.xiongyuan.lottery.bean.LoginEvent;
+import com.xiongyuan.lottery.mypage.adapter.TodayRechargeAdapter;
+import com.xiongyuan.lottery.mypage.bean.TodayRechargeBean;
+import com.xiongyuan.lottery.mypage.bean.TouzhuInfo;
+import com.xiongyuan.lottery.mypage.bean.TouzhuResult;
+import com.xiongyuan.lottery.utils.ToastUtils;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import in.srain.cube.views.ptr.PtrDefaultHandler2;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import okhttp3.Call;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class FragmentTodayRecharge extends BaseFragment {
+
+    @BindView(R.id.list_today_recharge)
+    ListView listView;
+    @BindView(R.id.refreshLayout)
+    PtrClassicFrameLayout refreshLayout;//刷新加载的控件
+    @BindView(R.id.tv)
+    TextView tv;
+    private Call call;
+    private Date d;
+    private int page=1;
+    private int p;
+    private static int mSerial = 0;
+    private int mTabPos = 0;
+    private String userId;
+    private String date;
+    private TodayRechargeAdapter mAdapter;
+    private ArrayList<TodayRechargeBean> arrayList;
+    private ArrayList<TodayRechargeBean> list;
+    private Handler handler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            //这里执行加载数据的操作
+            switch (p) {
+                case 0:
+                    date = "";
+                    page=1;
+                    break;
+                case 1:
+                    page=1;
+                    date = getNextDate(Calendar.DAY_OF_MONTH, -1);
+                    break;
+                case 2:
+                    page=1;
+                    date = getNextDate(Calendar.DAY_OF_MONTH, -7);
+                    break;
+                case 3:
+                    page=1;
+                    date = getNextDate(Calendar.MONTH, -1);
+                    break;
+                case 4:
+                    page=1;
+                    date = getNextDate(Calendar.MONTH, -3);
+                    break;
+            }
+            refreshData(mTabPos, jsonStr(date),1);
+            Log.e("jsonStr:", jsonStr(date)+"  "+mTabPos);
+        }
+
+        ;
+    };
+
+
+    public FragmentTodayRecharge(int serial) {
+        mSerial = serial;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_page_today_recharge;
+    }
+
+    public void sendMessage(int p) {
+        Message message = handler.obtainMessage();
+        message.sendToTarget();
+        this.p = p;
+    }
+
+    public void setTabPos(int mTabPos) {
+        this.mTabPos = mTabPos;
+    }
+
+    @Override
+    public void initView() {
+
+        mAdapter = new TodayRechargeAdapter(getActivity());
+        listView.setAdapter(mAdapter);
+        arrayList = new ArrayList<>();
+        list = new ArrayList<>();
+        //设置页和当前页一致时加载，防止预加载
+        if (mTabPos == mSerial) {
+            sendMessage(p);
+        }
+        //初始化RefreshLayout
+        //使用本对象作为key，用来记录上一次刷新的事件，如果两次下拉刷新间隔太近，不会触发刷新方法
+        refreshLayout.setLastUpdateTimeRelateObject(this);
+        //设置刷新时显示的背景色
+        refreshLayout.setBackgroundResource(R.color.color_333333);
+        //关闭header所耗时长
+        refreshLayout.setDurationToCloseHeader(1500);
+        //实现刷新，加载回调
+        refreshLayout.setPtrHandler(new PtrDefaultHandler2() {
+            @Override
+            public void onLoadMoreBegin(PtrFrameLayout frame) {
+                //加载更多时触发
+                page++;
+                refreshData(mTabPos, jsonStr(date),page);
+            }
+
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+                //刷新时触发
+                refreshData(mTabPos, jsonStr(date),1);
+            }
+        });
+
+    }
+
+    private void refreshData(int n, String search,int pageInt) {
+        if (pageInt==1){
+            if (arrayList!=null){
+                arrayList.clear();
+            }
+        }
+        call = LotteryClient.getInstance().getTouzhuji(userId, pageInt+"", search);
+        call.enqueue(new UICallBack() {
+            @Override
+            public void onFailureUI(Call call, IOException e) {
+                ToastUtils.showToast(getContext(), e.getMessage());
+            }
+
+            @Override
+            public void onResponseUI(Call call, String body) {
+                TouzhuResult result = new Gson().fromJson(body, TouzhuResult.class);
+                List<TouzhuInfo> ls = result.getResult().getData();
+                if (ls.toString().equals("[]")) {
+                    refreshLayout.setVisibility(View.GONE);
+                    tv.setVisibility(View.VISIBLE);
+                } else {
+                    refreshLayout.setVisibility(View.VISIBLE);
+                    tv.setVisibility(View.INVISIBLE);
+                    for (int i = 0; i < ls.size(); i++) {
+                        String issue = ls.get(i).getIssue();
+                        String gameTitle = ls.get(i).getGameTitle();
+                        String betAmount = ls.get(i).getBetAmount();
+                        String status = ls.get(i).getStatus();
+                        String winAmount = ls.get(i).getWinAmount();
+                        String addTime = ls.get(i).getAddTime();
+                        String date = stampToDate(addTime);
+                        arrayList.add(new TodayRechargeBean(issue, gameTitle, betAmount, status, winAmount, date));
+                    }
+                    Log.e("arraylist",pageInt+"  "+body);
+                    getBetLogsItem(arrayList, n,pageInt);
+                }
+                refreshLayout.refreshComplete();
+
+            }
+        });
+    }
+
+
+
+
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        //将获取的数据展示在界面上
+        userId = event.getUserId();
+    }
+
+    @Override
+    public void initData() {
+
+    }
+    @OnClick({R.id.tv})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.tv:
+                refreshData(mTabPos, jsonStr(date),1);
+                break;
+        }
+    }
+
+
+    private void getBetLogsItem(ArrayList<TodayRechargeBean> arrayList, int n,int page) {
+        switch (n) {
+            case 0:
+                mAdapter.refresh(arrayList);
+                break;
+            case 1:
+                getList(arrayList, "-1",page);
+                break;
+            case 2:
+                getList(arrayList, "0",page);
+                break;
+            case 3:
+                getList(arrayList, "1",page);
+                break;
+            case 4:
+                getList(arrayList, "2",page);
+                break;
+            case 5:
+                getList(arrayList, "3",page);
+                break;
+        }
+    }
+
+    private void getList(ArrayList<TodayRechargeBean> arrayList, String i,int page) {
+        if (page==1){
+            if (list!=null){
+                list.clear();
+            }
+        }
+
+        for (int j = 0; j < arrayList.size(); j++) {
+            TodayRechargeBean todayRechargeBean = arrayList.get(j);
+            if (todayRechargeBean.getStatus().equals(i)) {
+                String issue = todayRechargeBean.getIssue();
+                String gameTitle = todayRechargeBean.getGameTitle();
+                String betAmount = todayRechargeBean.getBetAmount();
+                String status = todayRechargeBean.getStatus();
+                String winAmount = todayRechargeBean.getWinAmount();
+                String addTime = todayRechargeBean.getAddTime();
+                list.add(new TodayRechargeBean(issue, gameTitle, betAmount, status, winAmount, addTime));
+            }
+        }
+        if (list.toString().equals("[]")) {
+            tv.setVisibility(View.VISIBLE);
+            refreshLayout.setVisibility(View.GONE);
+        } else {
+            refreshLayout.setVisibility(View.VISIBLE);
+            tv.setVisibility(View.INVISIBLE);
+        }
+            mAdapter.refresh(list);
+
+        }
+    /*
+* 将时间戳转换为时间
+*/
+
+    public static String stampToDate(String s) {
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long lt = Long.valueOf(s);
+        Date date = new Date(lt * 1000);
+        res = simpleDateFormat.format(date);
+        return res;
+    }
+
+    /*
+    * 获取指定时间前段时间的时间戳
+    * */
+    public String getNextDate(int field, int i) {
+        d = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+        calendar.add(field, i);
+        d = calendar.getTime();
+        return String.valueOf(d.getTime());
+    }
+
+    /*
+    * 参数
+    * */
+    public static String jsonStr(String date) {
+        if (date.equals("")) {
+            return "";
+        }
+        JSONObject jsonObj = new JSONObject();
+        JSONObject object = new JSONObject();
+        try {
+            object.put("mode", "betweenText");
+            object.put("field", "addTime");
+            object.put("val", date);
+            jsonObj.put("addTime", object);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObj.toString();
+    }
+}

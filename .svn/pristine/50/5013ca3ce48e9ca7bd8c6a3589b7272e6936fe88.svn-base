@@ -1,0 +1,65 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTodayRecharge;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class CashTransactionActivity extends BaseActivity {
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private int tag;
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private List<String> tabTitles = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_cash_transaction;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        for (int i=0;i<4;i++) {
+            mFragments.add(new FragmentTodayRecharge());
+        }
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(tag);
+    }
+
+    @Override
+    public void initData() {
+        tag = getIntent().getIntExtra("tag", 0);
+        tabTitles.add("购彩记录");
+        tabTitles.add("追号记录");
+        tabTitles.add("中奖记录");
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+}

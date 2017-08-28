@@ -1,0 +1,63 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
+import android.view.View;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentAddManage;
+import com.xiongyuan.lottery.mypage.fragment.FragmentProxyAccount;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class ProxyAccountActivity extends BaseActivity {
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<String> tabTitles = new ArrayList<>();
+
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_proxy_account;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        mFragments.add(new FragmentProxyAccount());
+        mFragments.add(new FragmentAddManage());
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(0);
+    }
+
+    @Override
+    public void initData() {
+        tabTitles.add("代理开户");
+        tabTitles.add("添加管理");
+
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\userimg.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\userimg.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\ic_launcher.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\myuser_sele.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\myuser_sele.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\userimg.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\userimg.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\ic_launcher.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi\\myuser_sele.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-mdpi\\myuser_sele.png"
+    }
+]

@@ -1,0 +1,44 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.adapter;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class SubordinateAccountAdapter$ViewHolder_ViewBinding implements Unbinder {
+  private SubordinateAccountAdapter.ViewHolder target;
+
+  @UiThread
+  public SubordinateAccountAdapter$ViewHolder_ViewBinding(SubordinateAccountAdapter.ViewHolder target,
+      View source) {
+    this.target = target;
+
+    target.tvWeek = Utils.findRequiredViewAsType(source, 2131558681, "field 'tvWeek'", TextView.class);
+    target.tvUsable = Utils.findRequiredViewAsType(source, 2131558686, "field 'tvUsable'", TextView.class);
+    target.tvTitle = Utils.findRequiredViewAsType(source, 2131558684, "field 'tvTitle'", TextView.class);
+    target.tvContent = Utils.findRequiredViewAsType(source, 2131558685, "field 'tvContent'", TextView.class);
+    target.iv = Utils.findRequiredViewAsType(source, 2131558683, "field 'iv'", ImageView.class);
+    target.tvDate = Utils.findRequiredViewAsType(source, 2131558682, "field 'tvDate'", TextView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    SubordinateAccountAdapter.ViewHolder target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.tvWeek = null;
+    target.tvUsable = null;
+    target.tvTitle = null;
+    target.tvContent = null;
+    target.iv = null;
+    target.tvDate = null;
+  }
+}

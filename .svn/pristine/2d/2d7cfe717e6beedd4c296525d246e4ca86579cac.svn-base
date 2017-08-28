@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_03.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_03.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_06.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_06.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_04.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_04.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_07.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_07.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_01.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_01.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\button_jbjjp.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_jbjjp.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\splash.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\splash.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\btn_minus.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\btn_minus.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\text_number_bg.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\text_number_bg.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_08.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_08.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_05.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_05.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\tuichudenglu_icon.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\tuichudenglu_icon.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\btn_minus_gray.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\btn_minus_gray.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\btn_plus.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\btn_plus.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\icon_tuandui_02.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_02.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\button_icon_zzyhq.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_icon_zzyhq.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\activity_icon_02.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\activity_icon_02.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\button_icon_tts.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_icon_tts.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi\\bbb.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\bbb.png"
+    }
+]

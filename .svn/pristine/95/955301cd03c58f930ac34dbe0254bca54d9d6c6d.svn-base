@@ -1,0 +1,106 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTodayRecharge;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Response;
+
+public class CashTransactionActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private int tag;
+    private int curTab=0;
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private List<String> tabTitles = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_cash_transaction;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        for(int i=0; i<tabTitles.size(); i++){
+            FragmentTodayRecharge fragment = new FragmentTodayRecharge(curTab);
+            fragment.setTabPos(i);
+            mFragments.add(fragment);
+        }
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(curTab);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                //滑动监听加载数据，一次只加载一个标签页
+                ((FragmentTodayRecharge)mAdapter.getItem(position)).sendMessage();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
+    @Override
+    public void initData() {
+        titleName.setText("购彩记录");
+        tag = getIntent().getIntExtra("tag", 0);
+        tabTitles.add("全部");
+        tabTitles.add("撤单");
+        tabTitles.add("未开奖");
+        tabTitles.add("已封单");
+        tabTitles.add("已开奖");
+        tabTitles.add("已中奖");
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+
+}

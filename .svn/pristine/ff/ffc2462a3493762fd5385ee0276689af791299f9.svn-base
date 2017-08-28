@@ -1,0 +1,235 @@
+[
+    {
+        "outputFile": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1523,
+                    "endColumn": 50,
+                    "endOffset": 1569
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 402,
+                        "endColumn": 50,
+                        "endOffset": 448
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1574,
+                    "endColumn": 44,
+                    "endOffset": 1614
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 109,
+                        "endColumn": 44,
+                        "endOffset": 149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1619,
+                    "endColumn": 47,
+                    "endOffset": 1662
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 453,
+                        "endColumn": 47,
+                        "endOffset": 496
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1667,
+                    "endColumn": 49,
+                    "endOffset": 1712
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 155,
+                        "endColumn": 49,
+                        "endOffset": 200
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1717,
+                    "endColumn": 50,
+                    "endOffset": 1763
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 205,
+                        "endColumn": 50,
+                        "endOffset": 251
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1768,
+                    "endColumn": 47,
+                    "endOffset": 1811
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 257,
+                        "endColumn": 47,
+                        "endOffset": 300
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1816,
+                    "endColumn": 47,
+                    "endOffset": 1859
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 305,
+                        "endColumn": 47,
+                        "endOffset": 348
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1864,
+                    "endColumn": 44,
+                    "endOffset": 1904
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 63,
+                        "endColumn": 44,
+                        "endOffset": 103
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1909,
+                    "endColumn": 46,
+                    "endOffset": 1951
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 16,
+                        "endColumn": 46,
+                        "endOffset": 58
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1956,
+                    "endColumn": 46,
+                    "endOffset": 1998
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 354,
+                        "endColumn": 46,
+                        "endOffset": 396
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 2003,
+                    "endColumn": 51,
+                    "endOffset": 2050
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\ids.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 51,
+                        "endOffset": 102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 2055,
+                    "endColumn": 38,
+                    "endOffset": 2089
+                },
+                "from": {
+                    "file": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\values\\ids.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 107,
+                        "endColumn": 38,
+                        "endOffset": 141
+                    }
+                }
+            }
+        ]
+    }
+]

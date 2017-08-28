@@ -1,0 +1,177 @@
+package com.xiongyuan.lottery;
+
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Window;
+
+import com.google.gson.Gson;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+import com.xiongyuan.lottery.customview.BottomBar;
+import com.xiongyuan.lottery.customview.BottomBarTab;
+import com.xiongyuan.lottery.homepage.fragment.HomeFragment;
+import com.xiongyuan.lottery.mypage.bean.Balance;
+import com.xiongyuan.lottery.mypage.dialog.RegistermpDialog;
+import com.xiongyuan.lottery.mypage.fragment.MyCenterFragment;
+import com.xiongyuan.lottery.secondpage.fragment.SecondFragment;
+import com.xiongyuan.lottery.thirdpage.fragment.ThirdFragment;
+import com.xiongyuan.lottery.utils.PrefUtils;
+import com.xiongyuan.lottery.utils.ToastUtils;
+
+import java.io.IOException;
+
+import butterknife.BindView;
+import okhttp3.Call;
+
+public class MainActivity extends BaseActivity implements SendBack{
+
+    private HomeFragment homeFragment;  //首页购彩
+    private SecondFragment secondFragment;//天天有礼
+    private ThirdFragment thirdFragment;//精彩内容
+    private MyCenterFragment myCenterFragment;//账户管理
+    @BindView(R.id.bottomBar)
+    BottomBar bottomBar;
+
+
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+
+        BottomBarTab bottomBarTab1 = new BottomBarTab(this, R.mipmap.home, R.mipmap.uhome, "首页购彩");
+        BottomBarTab bottomBarTab2 = new BottomBarTab(this, R.mipmap.lb, R.mipmap.ulb, "天天有礼");
+        BottomBarTab bottomBarTab3 = new BottomBarTab(this, R.mipmap.nr, R.mipmap.unr, "开奖信息");
+        BottomBarTab bottomBarTab4 = new BottomBarTab(this, R.mipmap.uwo, R.mipmap.wo, "账户管理");
+        bottomBar.addItem(bottomBarTab1);
+        bottomBar.addItem(bottomBarTab2);
+        bottomBar.addItem(bottomBarTab3);
+        bottomBar.addItem(bottomBarTab4);
+        bottomBar.setListener(new BottomBar.OnTabItemClickListener() {
+            @Override
+            public void onClick(int position) {
+                switch (position) {
+                    case 0:
+                        if (homeFragment == null) {
+                            homeFragment = new HomeFragment();
+                            homeFragment.setSendBack(MainActivity.this);
+                            getSupportFragmentManager().beginTransaction().add(R.id.main_container, homeFragment).commit();
+                        } else {
+                            if (upFragment == null)
+                                fragmentManager.beginTransaction().show(homeFragment).commit();
+                            else
+                                fragmentManager.beginTransaction().hide(upFragment).show(homeFragment).commit();
+                        }
+                        upFragment = homeFragment;
+                        break;
+                    case 1:
+                        if (secondFragment == null) {
+                            secondFragment = new SecondFragment();
+                            fragmentManager.beginTransaction().add(R.id.main_container, secondFragment).commit();
+                        }
+                        fragmentManager.beginTransaction().hide(upFragment).show(secondFragment).commit();
+                        upFragment = secondFragment;
+
+                        break;
+                    case 2:
+                        if (thirdFragment == null) {
+                            thirdFragment = new ThirdFragment();
+                            fragmentManager.beginTransaction().add(R.id.main_container, thirdFragment).commit();
+                        }
+                        fragmentManager.beginTransaction().hide(upFragment).show(thirdFragment).commit();
+                        upFragment = thirdFragment;
+
+                        break;
+                    case 3:
+                        if (myCenterFragment == null) {
+                            myCenterFragment = new MyCenterFragment();
+                            fragmentManager.beginTransaction().add(R.id.main_container, myCenterFragment).commit();
+                        }
+                        fragmentManager.beginTransaction().hide(upFragment).show(myCenterFragment).commit();
+                        upFragment = myCenterFragment;
+
+                        break;
+                }
+            }
+        });
+        bottomBar.setCurrentItem(0);
+
+    }
+
+    @Override
+    public void initData() {
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ClipboardManager clipboardmanager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        //判断剪贴板里是否有内容
+        if(!clipboardmanager.hasPrimaryClip()) {
+            return;
+        }
+        ClipData clipData =clipboardmanager.getPrimaryClip();
+        String name = clipData.getItemAt(0).getText().toString();
+        if (name.length() >= 10) {
+            String substring = name.substring(0, 5);
+            String clipDataName = PrefUtils.getPrefString(MainActivity.this, "clipDataName", "");
+            if (substring.equals("#猜猜乐#")) {
+                if (clipDataName.equals("")) {
+                    PrefUtils.setPrefString(MainActivity.this, "clipDataName", name);
+                } else {
+                    if (!clipDataName.equals(name)) {
+                        PrefUtils.setPrefString(MainActivity.this, "clipDataName", name);
+                        ToastUtils.showToast(MainActivity.this, name);
+                    }
+                }
+                String code = name.substring(name.length() - 10, name.length());
+                Log.e("9999+++", code);
+                RegistermpDialog dialog = new RegistermpDialog(this, new RegistermpDialog.OnCustomDialogListener() {
+                    @Override
+                    public void back(String username, String password, String repsw) {
+                        startRegister(code, username, password, repsw);
+
+                    }
+                });
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.show();
+
+            }
+
+        }
+    }
+    private void startRegister(String code,String username,String password,String repsw) {
+        Call call = LotteryClient.getInstance().getRegister(code,username,password,repsw);
+        call.enqueue(new UICallBack() {
+            @Override
+            public void onFailureUI(Call call, IOException e) {
+                ToastUtils.showToast(MainActivity.this,e.getMessage());
+            }
+
+            @Override
+            public void onResponseUI(Call call, String body) {
+                Balance balance = new Gson().fromJson(body,Balance.class);
+                String errormsg = balance.getErrormsg();
+                if (errormsg.equals("")||errormsg.equals(null)){
+                    errormsg = "注册成功";
+
+                }
+                ToastUtils.showToast(MainActivity.this,errormsg);
+
+            }
+        });
+    }
+
+    @Override
+    public void send(int i) {
+        bottomBar.setCurrentItem(i);
+    }
+}

@@ -1,0 +1,99 @@
+package com.xiongyuan.lottery.homepage.activity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.homepage.adapter.BetAdapter;
+import com.xiongyuan.lottery.homepage.view.SimpleNumberPicker;
+import com.xiongyuan.lottery.utils.ToastUtils;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class BetActivity extends BaseActivity {
+
+    @BindView(R.id.title_right)
+    TextView titleright;
+
+    @BindView(R.id.bet_lv)
+    ListView betLv;
+    @BindView(R.id.number_picker2)
+    SimpleNumberPicker numberPicker2;
+    @BindView(R.id.number_picker)
+    SimpleNumberPicker numberPicker;
+    @BindView(R.id.switch1)
+    Switch switch1;
+    @BindView(R.id.tv_qd)
+    TextView tvQd;
+    @BindView(R.id.tv_hq)
+    TextView tvhq;
+
+    String tzmoney = "33"; //接受投注钱数
+
+    BetAdapter adapter;
+
+    int peishu;
+    int qishu;
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_bet;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titleright.setText("清空");
+        titleright.setVisibility(View.VISIBLE);
+
+        adapter = new BetAdapter();
+        betLv.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void initData() {
+
+
+        numberPicker.setOnNumberChangeListener(new SimpleNumberPicker.OnNumberChangeListener() {
+
+            // 可以拿到商品的数量
+            @Override
+            public void onNumberChanged(int number) {
+                peishu = number-1;
+                ToastUtils.showToast(BetActivity.this,qishu+"");
+                int i = Integer.valueOf(tzmoney)*qishu + peishu*10;
+
+                tvhq.setText("共  "+ i + "  元");
+
+            }
+        });
+        numberPicker2.setOnNumberChangeListener(new SimpleNumberPicker.OnNumberChangeListener() {
+            @Override
+            public void onNumberChanged(int number) {
+                qishu  = number-1;
+                int i = (Integer.valueOf(tzmoney)+peishu *10 )* number ;
+                tvhq.setText("共  "+ i + "  元");
+
+            }
+        });
+
+    }
+
+    @OnClick({R.id.title_left})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+//    public int getNumber(){
+//        String string = mTvNumber.getText().toString();
+//        return Integer.parseInt(string);
+//    }
+
+}

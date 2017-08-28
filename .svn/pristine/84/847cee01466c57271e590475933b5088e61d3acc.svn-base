@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher_round.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\activity_icon_02.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\activity_icon_02.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\button_icon_zzyhq.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_icon_zzyhq.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_08.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_08.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_01.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_01.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_05.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_05.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\bbb.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\bbb.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\tuichudenglu_icon.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\tuichudenglu_icon.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_04.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_04.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_02.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_02.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_07.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_07.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_06.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_06.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\button_jbjjp.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_jbjjp.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\button_icon_tts.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\button_icon_tts.png"
+    },
+    {
+        "merged": "E:\\lottery\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\icon_tuandui_03.png",
+        "source": "E:\\lottery\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxhdpi\\icon_tuandui_03.png"
+    }
+]

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="5dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="4dp"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/mainBackgroundColor" />
+
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/adapter_my_team_iv_tou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        android:src="@mipmap/myuser_sele" />
+
+                    <ImageView
+                        android:id="@+id/adapter_my_team_iv_online"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/iv_tou"
+                        android:layout_alignRight="@+id/iv_tou"
+                        android:layout_alignTop="@+id/iv_tou"
+                        android:src="@mipmap/zx"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/rl">
+
+                    <TextView
+                        android:id="@+id/adapter_my_team_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="秦先生"
+                        android:textColor="@color/color_333333"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/adapter_my_team_iv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/adapter_my_team_user_name"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/adapter_my_team_user_name"
+                        android:layout_toRightOf="@+id/adapter_my_team_user_name"
+                        android:src="@mipmap/vip" />
+
+                    <TextView
+                        android:id="@+id/user_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="余额（元）:"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/adapter_my_team_tv_usable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="160"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/user_money"
+                        android:textColor="@color/mainBackgroundColor"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_me_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@mipmap/buy_lottery_guide"
+                    android:padding="5dp"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/iv_me_right">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="高/低频返点"
+                        android:textColor="@color/color_333333"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:id="@+id/adapter_my_team_tv_maxRebate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@mipmap/max_min"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="5dp"
+                            android:text="8.1"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/adapter_my_team_tv_minRebate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@mipmap/max_min"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="7.1"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="@dimen/line_size"
+                        android:layout_height="match_parent"
+                        android:background="@color/gap_line" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</LinearLayout>

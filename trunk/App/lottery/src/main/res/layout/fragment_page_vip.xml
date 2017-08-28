@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/vip_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:divider="@null" />
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#F2F2F2"-->
+        <!--android:orientation="horizontal">-->
+            <!--<LinearLayout-->
+                <!--android:id="@+id/right_title_container"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal">-->
+            <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; 此部分是内容部分 用ScrollView实现上下滚动效果 &ndash;&gt;-->
+    <!--<com.xiongyuan.lottery.mypage.view.table.AbPullToRefreshView-->
+        <!--android:id="@+id/pulltorefreshview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ScrollView-->
+            <!--android:id="@+id/pull_refresh_scroll"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                    <!--<com.xiongyuan.lottery.mypage.view.table.MyListView-->
+                        <!--android:id="@+id/right_container_listview"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="#ffffff"-->
+                        <!--android:scrollbars="none">-->
+                    <!--</com.xiongyuan.lottery.mypage.view.table.MyListView>-->
+
+            <!--</LinearLayout>-->
+        <!--</ScrollView>-->
+    <!--</com.xiongyuan.lottery.mypage.view.table.AbPullToRefreshView>-->
+</LinearLayout>

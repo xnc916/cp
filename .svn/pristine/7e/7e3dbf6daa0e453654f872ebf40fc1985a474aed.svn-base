@@ -1,0 +1,68 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentAddManage;
+import com.xiongyuan.lottery.mypage.fragment.FragmentMyTeam;
+import com.xiongyuan.lottery.mypage.fragment.FragmentProxyAccount;
+import com.xiongyuan.lottery.mypage.fragment.FragmentSubordinateAccount;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTeamStatistics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class TeamReportActivity extends BaseActivity {
+    @BindView(R.id.layout_tab)
+    TabLayout mTabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
+    private List<Fragment> mFragments = new ArrayList<Fragment>();
+    private SimpleFragmentPagerAdapter mAdapter;
+    private List<String> tabTitles = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_team_report;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        mFragments.add(new FragmentTeamStatistics());
+        mFragments.add(new FragmentSubordinateAccount());
+        mFragments.add(new FragmentMyTeam());
+
+        mAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),tabTitles, mFragments);
+        mViewPager.setAdapter(mAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setSmoothScrollingEnabled(true);
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        //设置当前显示哪个标签页
+        mViewPager.setCurrentItem(0);
+    }
+
+    @Override
+    public void initData() {
+        tabTitles.add("团队统计");
+        tabTitles.add("下级流水");
+        tabTitles.add("我的团队");
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+}

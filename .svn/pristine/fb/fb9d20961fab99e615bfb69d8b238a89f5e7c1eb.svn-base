@@ -1,0 +1,351 @@
+package com.xiongyuan.lottery.homepage.bean.pkdata;
+
+/**
+ * Created by gameben on 2017-06-11.
+ */
+
+public class Playinfotwo {
+
+        /**
+         * id : 72
+         * game_id : 1
+         * pid : 154
+         * title : 直选复式
+         * typeSetRule : null
+         * codeLength : null
+         * codeBidLength : null
+         * codeBetLength : 2
+         * codeBetMultiple : 1
+         * codeZone : {"title":[],"code":[]}
+         * codeRepeat : null
+         * codeType : null
+         * codeSelect : optionalCompound
+         * codeReg : null
+         * explain : 至少选择两位，如：“万位和千位”，按位至少选择2个号码，开奖号按位包含在选号中即中奖
+         * explainDetail : null
+         * explame : null
+         * sort : 100
+         * oneAmount : 2.00
+         * bonus : 95.000
+         * selectRule : {"codeZone":{"code":["0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9"],"title":["万位","千位","百位","十位","个位"]}}
+         * returnStep : null
+         * returnAmount : null
+         * status : 1
+         * bingoType : regToCode
+         * bingoCode : 1|2|3|4|5
+         * bingoRule : {"repeatCount":"1"}
+         * bingoSortOrder : 1
+         */
+
+        private String id;
+        private String game_id;
+        private String pid;
+        private String title;
+        private Object typeSetRule;
+        private Object codeLength;
+        private Object codeBidLength;
+        private String codeBetLength;
+        private String codeBetMultiple;
+        //private CodeZoneBeanX codeZone;
+        private Object codeRepeat;
+        private Object codeType;
+        private String codeSelect;
+        private Object codeReg;
+        private String explain;
+        private Object explainDetail;
+        private Object explame;
+        private String sort;
+        private String oneAmount;
+        private String bonus;
+        //private SelectRuleBeanX selectRule;
+        private Object returnStep;
+        private Object returnAmount;
+        private String status;
+        private String bingoType;
+        private String bingoCode;
+        private String bingoRule;
+        private String bingoSortOrder;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getGame_id() {
+        return game_id;
+    }
+
+    public void setGame_id(String game_id) {
+        this.game_id = game_id;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Object getTypeSetRule() {
+        return typeSetRule;
+    }
+
+    public void setTypeSetRule(Object typeSetRule) {
+        this.typeSetRule = typeSetRule;
+    }
+
+    public Object getCodeLength() {
+        return codeLength;
+    }
+
+    public void setCodeLength(Object codeLength) {
+        this.codeLength = codeLength;
+    }
+
+    public Object getCodeBidLength() {
+        return codeBidLength;
+    }
+
+    public void setCodeBidLength(Object codeBidLength) {
+        this.codeBidLength = codeBidLength;
+    }
+
+    public String getCodeBetLength() {
+        return codeBetLength;
+    }
+
+    public void setCodeBetLength(String codeBetLength) {
+        this.codeBetLength = codeBetLength;
+    }
+
+    public String getCodeBetMultiple() {
+        return codeBetMultiple;
+    }
+
+    public void setCodeBetMultiple(String codeBetMultiple) {
+        this.codeBetMultiple = codeBetMultiple;
+    }
+
+//    public CodeZoneBeanX getCodeZone() {
+//        return codeZone;
+//    }
+//
+//    public void setCodeZone(CodeZoneBeanX codeZone) {
+//        this.codeZone = codeZone;
+//    }
+
+    public Object getCodeRepeat() {
+        return codeRepeat;
+    }
+
+    public void setCodeRepeat(Object codeRepeat) {
+        this.codeRepeat = codeRepeat;
+    }
+
+    public Object getCodeType() {
+        return codeType;
+    }
+
+    public void setCodeType(Object codeType) {
+        this.codeType = codeType;
+    }
+
+    public String getCodeSelect() {
+        return codeSelect;
+    }
+
+    public void setCodeSelect(String codeSelect) {
+        this.codeSelect = codeSelect;
+    }
+
+    public Object getCodeReg() {
+        return codeReg;
+    }
+
+    public void setCodeReg(Object codeReg) {
+        this.codeReg = codeReg;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain;
+    }
+
+    public Object getExplainDetail() {
+        return explainDetail;
+    }
+
+    public void setExplainDetail(Object explainDetail) {
+        this.explainDetail = explainDetail;
+    }
+
+    public Object getExplame() {
+        return explame;
+    }
+
+    public void setExplame(Object explame) {
+        this.explame = explame;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+
+    public String getOneAmount() {
+        return oneAmount;
+    }
+
+    public void setOneAmount(String oneAmount) {
+        this.oneAmount = oneAmount;
+    }
+
+    public String getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(String bonus) {
+        this.bonus = bonus;
+    }
+
+//    public SelectRuleBeanX getSelectRule() {
+//        return selectRule;
+//    }
+//
+//    public void setSelectRule(SelectRuleBeanX selectRule) {
+//        this.selectRule = selectRule;
+//    }
+
+    public Object getReturnStep() {
+        return returnStep;
+    }
+
+    public void setReturnStep(Object returnStep) {
+        this.returnStep = returnStep;
+    }
+
+    public Object getReturnAmount() {
+        return returnAmount;
+    }
+
+    public void setReturnAmount(Object returnAmount) {
+        this.returnAmount = returnAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getBingoType() {
+        return bingoType;
+    }
+
+    public void setBingoType(String bingoType) {
+        this.bingoType = bingoType;
+    }
+
+    public String getBingoCode() {
+        return bingoCode;
+    }
+
+    public void setBingoCode(String bingoCode) {
+        this.bingoCode = bingoCode;
+    }
+
+    public String getBingoRule() {
+        return bingoRule;
+    }
+
+    public void setBingoRule(String bingoRule) {
+        this.bingoRule = bingoRule;
+    }
+
+    public String getBingoSortOrder() {
+        return bingoSortOrder;
+    }
+
+    public void setBingoSortOrder(String bingoSortOrder) {
+        this.bingoSortOrder = bingoSortOrder;
+    }
+
+//    public static class CodeZoneBeanX {
+//        private List<?> title;
+//        private List<?> code;
+//
+//        public List<?> getTitle() {
+//            return title;
+//        }
+//
+//        public void setTitle(List<?> title) {
+//            this.title = title;
+//        }
+//
+//        public List<?> getCode() {
+//            return code;
+//        }
+//
+//        public void setCode(List<?> code) {
+//            this.code = code;
+//        }
+//    }
+
+//    public static class SelectRuleBeanX {
+//        /**
+//         * codeZone : {"code":["0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9","0|1|2|3|4|5|6|7|8|9"],"title":["万位","千位","百位","十位","个位"]}
+//         */
+//
+//        private CodeZoneBeanX codeZone;
+//
+//        public CodeZoneBeanX getCodeZone() {
+//            return codeZone;
+//        }
+//
+//        public void setCodeZone(CodeZoneBeanX codeZone) {
+//            this.codeZone = codeZone;
+//        }
+//
+//        public static class CodeZoneBeanX {
+//            private List<String> code;
+//            private List<String> title;
+//
+//            public List<String> getCode() {
+//                return code;
+//            }
+//
+//            public void setCode(List<String> code) {
+//                this.code = code;
+//            }
+//
+//            public List<String> getTitle() {
+//                return title;
+//            }
+//
+//            public void setTitle(List<String> title) {
+//                this.title = title;
+//            }
+//        }
+//    }
+}
+

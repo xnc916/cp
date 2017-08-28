@@ -1,0 +1,9 @@
+package com.xiongyuan.lottery.base;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class Constant {
+    public static String URL="http://52.221.208.66/model/json/?";
+}

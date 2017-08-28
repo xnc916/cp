@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiongyuan.lottery.LoginActivity">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/default_head_bar_back_img" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/gap_line"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="帐    号："
+                android:textColor="@color/color_777572"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/lg_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:hint="请输入用户名"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:textColor="@color/color_777572"
+                android:textColorHint="@color/contentColorTwo"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/gap_line"  />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="密    码："
+                    android:textColor="@color/color_777572"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/lg_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColorHint="@color/contentColorTwo"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:button="@drawable/checkbox_style" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@color/gap_line"  />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorTabbar"
+            android:text="忘记密码？"
+            android:visibility="invisible"
+            android:id="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTabbar"
+            android:layout_marginLeft="21dp"
+            android:layout_marginStart="21dp"
+            android:text="是否记住密码"
+            android:textSize="10sp"
+            android:checked="true"
+            android:layout_alignBottom="@+id/textView2" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/lg_bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@drawable/btn_login"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="登    录" />
+    <Button
+        android:id="@+id/lg_bt_register"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@drawable/btn_register"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorTabbar"
+        style="?android:attr/borderlessButtonStyle"
+        android:visibility="gone"
+        android:text="注    册" />
+</LinearLayout>

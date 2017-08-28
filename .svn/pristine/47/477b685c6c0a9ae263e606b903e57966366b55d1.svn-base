@@ -1,0 +1,318 @@
+package com.xiongyuan.lottery.homepage.activity;
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import com.baoyz.swipemenulistview.SwipeMenu;
+import com.baoyz.swipemenulistview.SwipeMenuCreator;
+import com.baoyz.swipemenulistview.SwipeMenuItem;
+import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.google.gson.Gson;
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+import com.xiongyuan.lottery.homepage.adapter.BetAdapter;
+import com.xiongyuan.lottery.homepage.bean.PlayAllResult;
+import com.xiongyuan.lottery.homepage.bean.pkdata.BetDataBean;
+import com.xiongyuan.lottery.homepage.view.SimpleNumberPicker;
+import com.xiongyuan.lottery.homepage.view.SimpleNumberPicker2;
+import com.xiongyuan.lottery.mypage.activity.CashTransactionActivity;
+import com.xiongyuan.lottery.thirdpage.bean.Shil;
+import com.xiongyuan.lottery.utils.ToastUtils;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import okhttp3.Call;
+
+public class BetActivity extends BaseActivity {
+
+    @BindView(R.id.title_right)
+    TextView titleright;
+
+    @BindView(R.id.bet_lv)
+    SwipeMenuListView betLv;
+    @BindView(R.id.number_picker2)
+    SimpleNumberPicker2 numberPicker2;
+    @BindView(R.id.number_picker)
+    SimpleNumberPicker numberPicker;
+    @BindView(R.id.switch1)
+    Switch switch1;
+    @BindView(R.id.tv_qd)
+    TextView tvQd;
+    @BindView(R.id.tv_hq)
+    TextView tvhq;
+
+    String tzmoney = "33"; //接受投注钱数
+
+    BetAdapter adapter;
+
+    int peishu = 1;
+    int qishu = 1;
+
+    private String oneAmount;//单价
+    private String haoma;//号码
+    private String gameplay;//玩法
+    private String game_id;//游戏id
+    private String play_id;//玩法id
+    private int zhuNum = 0;//多少注
+    private String beiNum;//多少倍钱
+    private String userId;
+    private int temp = 1;
+
+    private int money = 0;
+
+    private String zhongt = "1";
+    private ArrayList<Shil> s = new ArrayList<>();
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_bet;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titleright.setText("清空");
+        titleright.setVisibility(View.VISIBLE);
+
+    }
+
+    @Override
+    public void initData() {
+
+        tzmoney = getIntent().getStringExtra("qian");
+        userId = getIntent().getStringExtra("userid");
+        game_id = getIntent().getStringExtra("game_id");
+        play_id = getIntent().getStringExtra("play_id");
+        tvhq.setText("共  "+ tzmoney + "  元");
+        s = (ArrayList<Shil>) getIntent().getSerializableExtra("betlist");
+        adapter = new BetAdapter(this);
+        betLv.setAdapter(adapter);
+        adapter.refresh(s);
+
+        numberPicker.setOnNumberChangeListener(new SimpleNumberPicker.OnNumberChangeListener() {
+
+            // 可以拿到商品的数量
+            @Override
+            public void onNumberChanged(int number) {
+                peishu = number-1;
+                money = 0;
+                int i1 = 0;
+                if (number - temp == 0){
+                    i1 = 0;
+                }
+                if (number - temp > 0){
+                    i1 = 1;
+                }
+                if (number - temp < 0){
+                    i1 = -1;
+                }
+
+                String gai = i1+"";
+                intshuju(gai);
+
+
+
+                initMoney();
+                int i = money* qishu ;
+                tvhq.setText("共  "+ i + "  元");
+
+
+                temp = number;
+                adapter.refresh(s);
+            }
+        });
+
+
+        numberPicker2.setOnNumberChangeListener2(new SimpleNumberPicker2.OnNumberChangeListener2() {
+            @Override
+            public void onNumberChanged(int number) {
+                qishu  = number;
+                money = 0;
+                initMoney();
+                int i = money* qishu ;
+                tvhq.setText("共  "+ i + "  元");
+            }
+        });
+
+        SwipeMenuCreator creator = new SwipeMenuCreator() {
+
+            @Override
+            public void create(SwipeMenu menu) {
+
+                // create "delete" item
+                SwipeMenuItem deleteItem = new SwipeMenuItem(
+                        getApplicationContext());
+                // set item background
+                deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,
+                        0x3F, 0x25)));
+                // set item width
+                deleteItem.setWidth(dp2px(90));
+                deleteItem.setTitle("删除");
+                deleteItem.setTitleSize(18);
+                deleteItem.setTitleColor(getResources().getColor(R.color.colorWhite));
+                // set a icon
+                //deleteItem.setIcon(R.drawable.ic_delete);
+                // add to menu
+                menu.addMenuItem(deleteItem);
+            }
+        };
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    zhongt = "1";
+                }else {
+                    zhongt = "0";
+                }
+            }
+        });
+
+
+        betLv.setMenuCreator(creator);
+        betLv.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+                s.remove(position);
+                money = 0;
+                initMoney();
+                int i = money* qishu ;
+                tvhq.setText("共  "+ i + "  元");
+                adapter.refresh(s);
+                return false;
+            }
+        });
+
+    }
+
+    private void initMoney() {
+        for (int i = 0;i < s.size();i++){
+            double aDouble = Double.valueOf(s.get(i).getDanjia());
+            int dj = (int)aDouble;
+            int bs = Integer.valueOf(s.get(i).getBeishu());
+            money = money +(dj * s.get(i).getZhushu() * bs);
+        }
+    }
+
+    private int dp2px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+                getResources().getDisplayMetrics());
+    }
+    private void intshuju(String gai) {
+
+        int g = Integer.valueOf(gai);
+        for (int i = 0;i < s.size();i++){
+            int y = Integer.valueOf(s.get(i).getBeishu());
+            int bs = y+g;
+            s.get(i).setBeishu(bs+"");
+        }
+
+    }
+
+    @OnClick({R.id.title_left,R.id.title_right,R.id.tv_qd})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_left:
+                Intent intent1 = new Intent();
+                intent1.putExtra("betlist",(Serializable)s);
+                setResult(2,intent1);
+                finish();
+                break;
+            case R.id.title_right:
+                adapter.sclear();
+                s.clear();
+                money =0;
+                initMoney();
+                int i = money* qishu ;
+                tvhq.setText("共  "+ i + "  元");
+                break;
+            case R.id.tv_qd:
+                int k = 0;
+                for (int j = 0;j < s.size();j++){
+                    k = k + s.get(j).getZhushu();
+                }
+                money =0;
+                initMoney();
+                int mm = money* qishu ;
+
+                List<BetDataBean> lists = new ArrayList<>();
+                for (int p = 0; p < s.size();p++){
+                    BetDataBean bet = new BetDataBean();
+                    bet.setCode(s.get(p).getHaoma());
+                    //bet.setCode(str);
+                    bet.setTimes(s.get(p).getBeishu());
+                    bet.setGame_id(game_id);
+                    bet.setPlay_id(play_id);
+                    double aDouble = Double.valueOf(s.get(p).getDanjia());
+                    int dj = (int)aDouble;
+                    int bs = Integer.valueOf(s.get(p).getBeishu());
+                    int money = dj * s.get(p).getZhushu() * bs;
+                    bet.setBetAmount(money+"");
+                    bet.setCurrency("1");
+                    bet.setReturnPer(s.get(p).getFandianl());
+                    bet.setBetCount(s.get(p).getZhushu()+"");
+
+                    lists.add(bet);
+                }
+
+                String sfzhui = "1";
+                String zhuiq;
+                if (qishu == 1){
+                    sfzhui = "0";
+                    zhuiq = "";
+                }else {
+                    sfzhui = "1";
+                    zhuiq = qishu+"";
+                }
+
+
+                Call call = LotteryClient.getInstance().getBet(userId,k+"",mm+"",lists.toString(),sfzhui,zhongt,zhuiq);
+                call.enqueue(new UICallBack() {
+                    @Override
+                    public void onFailureUI(Call call, IOException e) {
+                        ToastUtils.showToast(BetActivity.this,e.getMessage());
+                    }
+
+                    @Override
+                    public void onResponseUI(Call call, String body) {
+
+                        PlayAllResult result = new Gson().fromJson(body,PlayAllResult.class);
+
+                        if (result.getErrormsg().equals("")){
+                            ToastUtils.showToast(BetActivity.this,"投注成功");
+                            Intent intent = new Intent(BetActivity.this, CashTransactionActivity.class);
+                            intent.putExtra("tag", 0);
+                            intent.putExtra("userId", userId);
+                            startActivity(intent);
+
+                            adapter.sclear();
+                            s.clear();
+                            Intent intent1 = new Intent();
+                            intent1.putExtra("betlist",(Serializable)s);
+                            setResult(2,intent1);
+                            finish();
+                        }else {
+                            ToastUtils.showToast(BetActivity.this,result.getErrormsg());
+                        }
+
+                    }
+                });
+
+
+                break;
+        }
+    }
+
+}

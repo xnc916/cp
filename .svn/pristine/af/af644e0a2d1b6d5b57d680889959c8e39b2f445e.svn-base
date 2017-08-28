@@ -1,0 +1,53 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class FragmentAddManage_ViewBinding implements Unbinder {
+  private FragmentAddManage target;
+
+  private View view2131558598;
+
+  @UiThread
+  public FragmentAddManage_ViewBinding(final FragmentAddManage target, View source) {
+    this.target = target;
+
+    View view;
+    view = Utils.findRequiredView(source, 2131558598, "field 'tv' and method 'click'");
+    target.tv = Utils.castView(view, 2131558598, "field 'tv'", TextView.class);
+    view2131558598 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.refreshLayout = Utils.findRequiredViewAsType(source, 2131558596, "field 'refreshLayout'", PtrClassicFrameLayout.class);
+    target.listView = Utils.findRequiredViewAsType(source, 2131558749, "field 'listView'", ListView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    FragmentAddManage target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.tv = null;
+    target.refreshLayout = null;
+    target.listView = null;
+
+    view2131558598.setOnClickListener(null);
+    view2131558598 = null;
+  }
+}

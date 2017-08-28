@@ -1,0 +1,121 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.homepage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import com.xiongyuan.lottery.homepage.view.SimpleNumberPicker;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class PKActivity_ViewBinding implements Unbinder {
+  private PKActivity target;
+
+  private View view2131558696;
+
+  private View view2131558697;
+
+  private View view2131558608;
+
+  private View view2131558699;
+
+  private View view2131558546;
+
+  @UiThread
+  public PKActivity_ViewBinding(PKActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public PKActivity_ViewBinding(final PKActivity target, View source) {
+    this.target = target;
+
+    View view;
+    view = Utils.findRequiredView(source, 2131558696, "field 'titleLe' and method 'click'");
+    target.titleLe = Utils.castView(view, 2131558696, "field 'titleLe'", TextView.class);
+    view2131558696 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.tzbs = Utils.findRequiredViewAsType(source, 2131558609, "field 'tzbs'", TextView.class);
+    target.v = Utils.findRequiredView(source, 2131558539, "field 'v'");
+    view = Utils.findRequiredView(source, 2131558697, "field 'titleLeft' and method 'click'");
+    target.titleLeft = Utils.castView(view, 2131558697, "field 'titleLeft'", TextView.class);
+    view2131558697 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.pkweb = Utils.findRequiredViewAsType(source, 2131558607, "field 'pkweb'", WebView.class);
+    target.rl = Utils.findRequiredViewAsType(source, 2131558492, "field 'rl'", RelativeLayout.class);
+    view = Utils.findRequiredView(source, 2131558608, "field 'tvjx' and method 'click'");
+    target.tvjx = Utils.castView(view, 2131558608, "field 'tvjx'", TextView.class);
+    view2131558608 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558699, "field 'titleRight' and method 'click'");
+    target.titleRight = Utils.castView(view, 2131558699, "field 'titleRight'", TextView.class);
+    view2131558699 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.tm_tv = Utils.findRequiredViewAsType(source, 2131558606, "field 'tm_tv'", TextView.class);
+    target.mNumberPicker = Utils.findRequiredViewAsType(source, 2131558544, "field 'mNumberPicker'", SimpleNumberPicker.class);
+    view = Utils.findRequiredView(source, 2131558546, "method 'click'");
+    view2131558546 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    PKActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.titleLe = null;
+    target.tzbs = null;
+    target.v = null;
+    target.titleLeft = null;
+    target.pkweb = null;
+    target.rl = null;
+    target.tvjx = null;
+    target.titleRight = null;
+    target.tm_tv = null;
+    target.mNumberPicker = null;
+
+    view2131558696.setOnClickListener(null);
+    view2131558696 = null;
+    view2131558697.setOnClickListener(null);
+    view2131558697 = null;
+    view2131558608.setOnClickListener(null);
+    view2131558608 = null;
+    view2131558699.setOnClickListener(null);
+    view2131558699 = null;
+    view2131558546.setOnClickListener(null);
+    view2131558546 = null;
+  }
+}

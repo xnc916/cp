@@ -1,0 +1,100 @@
+package com.xiongyuan.lottery.mypage.bean;
+
+/**
+ * Created by gameben on 2017-06-30.
+ */
+
+public class TouzhuInfo {
+
+        private String id;
+        private String user_id;
+        private String user_name;
+        private String issue;
+        private String gameTitle;
+        private String betAmount;
+        private String status;
+        private String winAmount;
+        private String addTime;
+        private String game_id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(String user_id) {
+            this.user_id = user_id;
+        }
+
+        public String getUser_name() {
+            return user_name;
+        }
+
+        public void setUser_name(String user_name) {
+            this.user_name = user_name;
+        }
+
+        public String getIssue() {
+            return issue;
+        }
+
+        public void setIssue(String issue) {
+            this.issue = issue;
+        }
+
+        public String getGameTitle() {
+            return gameTitle;
+        }
+
+        public void setGameTitle(String gameTitle) {
+            this.gameTitle = gameTitle;
+        }
+
+        public String getBetAmount() {
+            return betAmount;
+        }
+
+        public void setBetAmount(String betAmount) {
+            this.betAmount = betAmount;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public String getWinAmount() {
+            return winAmount;
+        }
+
+        public void setWinAmount(String winAmount) {
+            this.winAmount = winAmount;
+        }
+
+        public String getAddTime() {
+            return addTime;
+        }
+
+        public void setAddTime(String addTime) {
+            this.addTime = addTime;
+        }
+
+        public String getGame_id() {
+            return game_id;
+        }
+
+        public void setGame_id(String game_id) {
+            this.game_id = game_id;
+        }
+    }
+

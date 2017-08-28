@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <include layout="@layout/default_head_bar_back"
+        android:id="@+id/title"/>
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/list_view_third"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:divider="@null" />
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="无相关数据\n点击空白位置刷新"
+        android:background="@color/colorWhite"
+        android:visibility="gone" />
+</LinearLayout>

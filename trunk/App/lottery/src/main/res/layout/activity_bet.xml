@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiongyuan.lottery.homepage.activity.BetActivity">
+    <include
+        android:id="@+id/title"
+        layout="@layout/default_head_bar_back_img" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/bet_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:cacheColorHint="@android:color/transparent"
+            android:layout_above="@+id/xian2"
+            />
+
+        <LinearLayout
+            android:id="@+id/xian2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/tv_hq"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:text="共 33 元"/>
+
+            <TextView
+                android:id="@+id/tv_qd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:layout_height="match_parent"
+                android:background="@drawable/border"
+                android:text="投注"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

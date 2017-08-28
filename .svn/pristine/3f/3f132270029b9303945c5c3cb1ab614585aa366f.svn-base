@@ -1,0 +1,86 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ExpandableListView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class MyCenterFragment_ViewBinding implements Unbinder {
+  private MyCenterFragment target;
+
+  private View view2131558706;
+
+  private View view2131558745;
+
+  private View view2131558738;
+
+  @UiThread
+  public MyCenterFragment_ViewBinding(final MyCenterFragment target, View source) {
+    this.target = target;
+
+    View view;
+    target.tvUserMaxRebate = Utils.findRequiredViewAsType(source, 2131558742, "field 'tvUserMaxRebate'", TextView.class);
+    target.tvUserBalance = Utils.findRequiredViewAsType(source, 2131558741, "field 'tvUserBalance'", TextView.class);
+    target.tvUserMinRebate = Utils.findRequiredViewAsType(source, 2131558743, "field 'tvUserMinRebate'", TextView.class);
+    target.tvUserName = Utils.findRequiredViewAsType(source, 2131558740, "field 'tvUserName'", TextView.class);
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558705, "field 'titleName'", TextView.class);
+    target.titleLeft = Utils.findRequiredViewAsType(source, 2131558704, "field 'titleLeft'", TextView.class);
+    target.listView = Utils.findRequiredViewAsType(source, 2131558747, "field 'listView'", ExpandableListView.class);
+    view = Utils.findRequiredView(source, 2131558706, "field 'titleRight' and method 'click'");
+    target.titleRight = Utils.castView(view, 2131558706, "field 'titleRight'", TextView.class);
+    view2131558706 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558745, "method 'onclick'");
+    view2131558745 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.onclick(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558738, "method 'click'");
+    view2131558738 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    MyCenterFragment target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.tvUserMaxRebate = null;
+    target.tvUserBalance = null;
+    target.tvUserMinRebate = null;
+    target.tvUserName = null;
+    target.titleName = null;
+    target.titleLeft = null;
+    target.listView = null;
+    target.titleRight = null;
+
+    view2131558706.setOnClickListener(null);
+    view2131558706 = null;
+    view2131558745.setOnClickListener(null);
+    view2131558745 = null;
+    view2131558738.setOnClickListener(null);
+    view2131558738 = null;
+  }
+}

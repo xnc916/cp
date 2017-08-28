@@ -1,0 +1,117 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.mypage.adapter.SimpleFragmentPagerAdapter;
+import com.xiongyuan.lottery.mypage.adapter.StatisticsTodayAdapter;
+import com.xiongyuan.lottery.mypage.fragment.FragmentTodayRecharge;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Response;
+
+public class StatisticsTodayActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.list_statistics_today)
+    ListView listView;
+    private StatisticsTodayAdapter adapter;
+    private ArrayList<String> list;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_statistics_today;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titleName.setText("个人统计");
+        adapter=new StatisticsTodayAdapter(this);
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void initData() {
+        list=new ArrayList<>();
+        getStatData(getIntent().getStringExtra("userId"));
+    }
+    @OnClick({R.id.title_left})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.title_left:
+                finish();
+                break;
+        }
+    }
+    //个人统计
+    private void getStatData(String userId) {
+        if (list!=null){
+            list.clear();
+        }
+        OkHttpUtils.post()
+                .url(Constant.URL)
+                .addParams("action", "Users.getStatData")
+                .addParams("user_id", userId)
+                .addParams("type","1")
+                .build()
+                .execute(new Callback<String>() {
+                    @Override
+                    public String parseNetworkResponse(Response response, int i) throws Exception {
+                        String s = response.body().string();
+                        return s;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        ToastUtils.showToast(StatisticsTodayActivity.this, "网络错误");
+                    }
+
+                    @Override
+                    public void onResponse(String o, int i) {
+                        Log.e("==-个人统计-==", o);
+                        try {
+                            JSONObject jsonObject = new JSONObject(o);
+                            String errormsg = jsonObject.optString("errormsg");
+                            if (errormsg.equals("")) {
+                                JSONObject object = jsonObject.optJSONObject("result");
+                                list.add(object.optString("recharge"));
+                                list.add(object.optString("cashSuc"));
+                                list.add(object.optString("bet"));
+                                list.add(object.optString("betReturn"));
+                                list.add(object.optString("winBet"));
+                                list.add(object.optString("proAndLoss"));
+                                adapter.refresh(list);
+                            } else {
+                                ToastUtils.showToast(StatisticsTodayActivity.this, errormsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+    }
+
+}

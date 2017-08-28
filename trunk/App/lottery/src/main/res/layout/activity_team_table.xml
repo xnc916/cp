@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiongyuan.lottery.mypage.activity.TeamTableActivity">
+    <include
+        android:id="@+id/title"
+        layout="@layout/default_head_bar_back_img" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp" />
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/table_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"/>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+
+    <!-- 此部分是标题部分 -->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#F2F2F2"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--&lt;!&ndash; 左侧标题的父容器 &ndash;&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_table_title_left"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_weight="3"-->
+            <!--android:gravity="center"-->
+            <!--android:maxLines="2"-->
+            <!--android:padding="5dp"-->
+            <!--android:text="总标题"/>-->
+
+        <!--&lt;!&ndash; 右侧标题的父容器可实现水平滚动 &ndash;&gt;-->
+        <!--<com.xiongyuan.lottery.mypage.view.SyncHorizontalScrollView-->
+            <!--android:id="@+id/title_horsv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:fillViewport="true"-->
+            <!--android:scrollbars="none">-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/right_title_container"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal">-->
+            <!--</LinearLayout>-->
+        <!--</com.xiongyuan.lottery.mypage.view.SyncHorizontalScrollView>-->
+    <!--</LinearLayout>-->
+
+    <!--&lt;!&ndash; 此部分是内容部分 用ScrollView实现上下滚动效果 &ndash;&gt;-->
+    <!--<com.xiongyuan.lottery.mypage.view.table.AbPullToRefreshView-->
+        <!--android:id="@+id/pulltorefreshview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ScrollView-->
+            <!--android:id="@+id/pull_refresh_scroll"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--&lt;!&ndash; 左侧内容的父容器 &ndash;&gt;-->
+                <!--<com.xiongyuan.lottery.mypage.view.table.MyListView-->
+                    <!--android:id="@+id/left_container_listview"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:scrollbars="none">-->
+                <!--</com.xiongyuan.lottery.mypage.view.table.MyListView>-->
+
+                <!--&lt;!&ndash; 右侧内容的父容器 实现水平滚动 &ndash;&gt;-->
+                <!--<com.xiongyuan.lottery.mypage.view.SyncHorizontalScrollView-->
+                    <!--android:id="@+id/content_horsv"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:fillViewport="true"-->
+                    <!--android:scrollbars="none">-->
+                    <!--<com.xiongyuan.lottery.mypage.view.table.MyListView-->
+                        <!--android:id="@+id/right_container_listview"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="#ffffff"-->
+                        <!--android:scrollbars="none">-->
+                    <!--</com.xiongyuan.lottery.mypage.view.table.MyListView>-->
+                <!--</com.xiongyuan.lottery.mypage.view.SyncHorizontalScrollView>-->
+            <!--</LinearLayout>-->
+        <!--</ScrollView>-->
+    <!--</com.xiongyuan.lottery.mypage.view.table.AbPullToRefreshView>-->
+</LinearLayout>

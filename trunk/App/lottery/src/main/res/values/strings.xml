@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">178娱乐</string>
+    <string name="un_user_name">登录/注册</string>
+    <string name="un_money">--</string>
+    <string name="kf_telephone">400-00000000</string>
+    <string name="item_first">First event</string>
+    <string name="item_default">Event %1d</string>
+    <string name="item_last">Last event</string>
+    <string name="cancel">取消</string>
+    <string name="pwSubmit">确定</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_team_tablexiang">TeamTablexiangActivity</string>
+
+
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+</resources>

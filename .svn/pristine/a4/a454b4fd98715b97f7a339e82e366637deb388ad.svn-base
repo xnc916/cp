@@ -1,0 +1,78 @@
+package com.xiongyuan.lottery.customview;
+
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+
+public class BottomBarTab extends FrameLayout {
+    private LinearLayout mBackGround;
+    private ImageView mIcon;
+    private TextView textView;
+    private int  selectIcon,unSelectIcon; //图标选择
+
+    private int mTabPosition = -1;
+
+    private Context mContext;
+
+    public BottomBarTab(Context context, @DrawableRes int selectIcon, @DrawableRes int unSelectIcon, String text) {
+        this(context, null,  selectIcon,unSelectIcon,text);
+    }
+
+    public BottomBarTab(Context context, AttributeSet attrs, @DrawableRes int selectIcon, @DrawableRes int unSelectIcon, String text) {
+        this(context, attrs, 0, selectIcon,unSelectIcon,text);
+    }
+
+    public BottomBarTab(Context context, AttributeSet attrs, int defStyleAttr, @DrawableRes int selectIcon, @DrawableRes int unSelectIcon, String text) {
+        super(context, attrs, defStyleAttr);
+        init(context, selectIcon,unSelectIcon,text);
+    }
+
+    private void init(Context context, int  selectIcon, int unSelectIcon,String text) {
+        this.mContext = context;
+        this.selectIcon = selectIcon;
+        this.unSelectIcon = unSelectIcon;
+        TypedArray typedArray = context.obtainStyledAttributes(
+                new int[]{R.attr.selectableItemBackgroundBorderless});
+        Drawable drawable = typedArray.getDrawable(0);
+        setBackgroundDrawable(drawable);
+        typedArray.recycle();
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_mian_bottom_item,null);
+        mBackGround= (LinearLayout) view.findViewById(R.id.ll_background);
+        mIcon = (ImageView) view.findViewById(R.id.tab_image);
+        mIcon.setImageResource(unSelectIcon);
+        textView = (TextView)view.findViewById(R.id.tab_text);
+        textView.setText(text);
+        addView(view);
+    }
+
+    @Override
+    public void setSelected(boolean selected) {
+        super.setSelected(selected);
+        if (selected) {
+            mIcon.setImageResource(selectIcon);
+        } else {
+            mIcon.setImageResource(unSelectIcon);
+        }
+    }
+
+    public void setTabPosition(int position) {
+        mTabPosition = position;
+        if (position == 0) {
+            setSelected(true);
+        }
+    }
+
+    public int getTabPosition() {
+        return mTabPosition;
+    }
+}

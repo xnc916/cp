@@ -1,0 +1,93 @@
+package com.xiongyuan.lottery.homepage.adapter;
+
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.thirdpage.bean.Shil;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+/**
+ * Created by gameben on 2017-07-05.
+ */
+
+public class BetAdapter extends BaseAdapter{
+    private Context context;
+    List<Shil> list = new ArrayList<>();
+    public BetAdapter(Context context) {
+        this.context = context;
+    }
+
+    public void refresh(List<Shil> s){
+        list.clear();
+        list.addAll(s);
+        notifyDataSetChanged();
+
+    }
+    public void sclear(){
+        list.clear();
+        notifyDataSetChanged();
+
+    }
+
+    @Override
+    public int getCount() {
+        return list.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+      ViewHolder viewHolder=null;
+        if (convertView==null){
+            convertView=View.inflate(context, R.layout.adapter_bet_item,null);
+            viewHolder=new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }else{
+            viewHolder= (ViewHolder) convertView.getTag();
+        }
+        viewHolder.tvhm.setText("号码： "+list.get(position).getHaoma());
+        viewHolder.tvwf.setText("玩法： "+list.get(position).getWanfa());
+        viewHolder.tvzyf.setText(list.get(position).getZhushu() + " 注，"
+                                +list.get(position).getDanjia() + " 元，返点率"
+                                +list.get(position).getFandianl() + "%");
+
+        viewHolder.tvbs.setText(list.get(position).getBeishu()+"倍");
+
+        return convertView;
+    }
+    class ViewHolder{
+        @BindView(R.id.tv_hm)
+        TextView tvhm;
+        @BindView(R.id.tv_wf)
+        TextView tvwf;
+        @BindView(R.id.tv_zyf)
+        TextView tvzyf;
+        @BindView(R.id.tv_bs)
+        TextView tvbs;
+
+
+
+        ViewHolder(View view){
+            ButterKnife.bind(this, view);
+        }
+    }
+}

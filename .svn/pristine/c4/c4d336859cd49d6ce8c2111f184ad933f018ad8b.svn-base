@@ -1,0 +1,107 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.homepage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import com.xiongyuan.lottery.homepage.view.SimpleNumberPicker;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class PKActivity_ViewBinding implements Unbinder {
+  private PKActivity target;
+
+  private View view2131558706;
+
+  private View view2131558703;
+
+  private View view2131558704;
+
+  private View view2131558549;
+
+  @UiThread
+  public PKActivity_ViewBinding(PKActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public PKActivity_ViewBinding(final PKActivity target, View source) {
+    this.target = target;
+
+    View view;
+    target.mNumberPicker = Utils.findRequiredViewAsType(source, 2131558547, "field 'mNumberPicker'", SimpleNumberPicker.class);
+    target.pkweb = Utils.findRequiredViewAsType(source, 2131558611, "field 'pkweb'", WebView.class);
+    target.tzbs = Utils.findRequiredViewAsType(source, 2131558616, "field 'tzbs'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558706, "field 'titleRight' and method 'click'");
+    target.titleRight = Utils.castView(view, 2131558706, "field 'titleRight'", TextView.class);
+    view2131558706 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558703, "field 'titleLe' and method 'click'");
+    target.titleLe = Utils.castView(view, 2131558703, "field 'titleLe'", TextView.class);
+    view2131558703 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.tm_tv = Utils.findRequiredViewAsType(source, 2131558610, "field 'tm_tv'", TextView.class);
+    target.rl = Utils.findRequiredViewAsType(source, 2131558492, "field 'rl'", RelativeLayout.class);
+    target.v = Utils.findRequiredView(source, 2131558539, "field 'v'");
+    view = Utils.findRequiredView(source, 2131558704, "field 'titleLeft' and method 'click'");
+    target.titleLeft = Utils.castView(view, 2131558704, "field 'titleLeft'", TextView.class);
+    view2131558704 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558549, "method 'click'");
+    view2131558549 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    PKActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.mNumberPicker = null;
+    target.pkweb = null;
+    target.tzbs = null;
+    target.titleRight = null;
+    target.titleLe = null;
+    target.tm_tv = null;
+    target.rl = null;
+    target.v = null;
+    target.titleLeft = null;
+
+    view2131558706.setOnClickListener(null);
+    view2131558706 = null;
+    view2131558703.setOnClickListener(null);
+    view2131558703 = null;
+    view2131558704.setOnClickListener(null);
+    view2131558704 = null;
+    view2131558549.setOnClickListener(null);
+    view2131558549 = null;
+  }
+}

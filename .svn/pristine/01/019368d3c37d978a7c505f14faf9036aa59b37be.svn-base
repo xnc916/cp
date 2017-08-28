@@ -1,0 +1,50 @@
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.os.Bundle;
+import android.util.Log;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+
+public class RecordNumberActivity extends BaseActivity {
+    private String userId;
+
+    private int pageInt = 1;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_record_number;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    public void initData() {
+        userId = getIntent().getStringExtra("userId");
+        Call call = LotteryClient.getInstance().getzhuih(userId);
+        call.enqueue(new UICallBack() {
+            @Override
+            public void onFailureUI(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponseUI(Call call, String body) {
+                Log.e("++++++++++++",userId);
+                Log.e("++++++++++++",body);
+
+            }
+        });
+    }
+
+
+}

@@ -1,0 +1,35 @@
+package com.xiongyuan.lottery.mypage.fragment;
+
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.bean.LoginEvent;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class FragmentVip extends BaseFragment {
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_page_vip;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        //将获取的数据展示在界面上
+
+
+    }
+    @Override
+    public void initData() {
+
+    }
+}

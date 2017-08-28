@@ -1,0 +1,24 @@
+package com.xiongyuan.lottery.homepage.bean.pkdata;
+
+/**
+ * Created by gameben on 2017-06-28.
+ */
+
+public class Shili {
+    private String action;
+
+    @Override
+    public String toString() {
+        return "{" +
+                "action:'" + action + '\'' +
+                '}';
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+}

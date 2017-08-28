@@ -1,0 +1,83 @@
+package com.xiongyuan.lottery.mypage.bean;
+
+/**
+ * Created by Administrator on 2017-06-21.
+ */
+
+public class TodayRechargeBean {
+    private String issue;
+    private String gameTitle;
+    private String betAmount;
+    private String status;
+    private String winAmount;
+    private String addTime;
+
+    public TodayRechargeBean(String issue, String gameTitle, String betAmount, String status, String winAmount,String addTime) {
+        this.issue = issue;
+        this.gameTitle = gameTitle;
+        this.betAmount = betAmount;
+        this.status = status;
+        this.winAmount = winAmount;
+        this.addTime=addTime;
+    }
+
+    public String getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(String addTime) {
+        this.addTime = addTime;
+    }
+
+    public String getIssue() {
+        return issue;
+    }
+
+    public void setIssue(String issue) {
+        this.issue = issue;
+    }
+
+    public String getGameTitle() {
+        return gameTitle;
+    }
+
+    public void setGameTitle(String gameTitle) {
+        this.gameTitle = gameTitle;
+    }
+
+    public String getBetAmount() {
+        return betAmount;
+    }
+
+    public void setBetAmount(String betAmount) {
+        this.betAmount = betAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getWinAmount() {
+        return winAmount;
+    }
+
+    public void setWinAmount(String winAmount) {
+        this.winAmount = winAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "TodayRechargeBean{" +
+                "issue='" + issue + '\'' +
+                ", gameTitle='" + gameTitle + '\'' +
+                ", betAmount='" + betAmount + '\'' +
+                ", status='" + status + '\'' +
+                ", winAmount='" + winAmount + '\'' +
+                ", addTime='" + addTime + '\'' +
+                '}';
+    }
+}

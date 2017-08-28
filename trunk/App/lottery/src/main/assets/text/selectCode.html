@@ -1,0 +1,133 @@
+<html doctype="html" ng-app='app'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false); 
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+   //window.addEventListener("resize",function(){_self.changePage();},false);
+    </script>
+    <script src="angular.min.js" type="text/javascript"></script>
+    <script src="common.js" type="text/javascript"></script>
+    <script src="angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="angular-touch.min.js" type="text/javascript"></script>
+    <script src="angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="ocLazyLoad.min.js" type="text/javascript"></script>
+    <script src="main.app.js" type="text/javascript"></script>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+    <script src="controller.app.js" type="text/javascript"></script>
+    <script src="directive.app.js" type="text/javascript"></script>
+    <link href="app.css" rel="stylesheet">
+    <script src="codeSelect.js" type="text/javascript"></script>
+    <script src="fastclick.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+          FastClick.attach(document.body);
+          });
+    </script>
+</head>
+<body>
+    
+<div ng-controller='selectCode'><!-- 复式 --> 
+<div class='numberRow' ng-repeat="(k,v) in codeZone.title" ng-show='play.codeSelect != "single"'>
+    <!-- 任选附加号码位 -->
+    <div class='posCheckBoxDataBox' ng-show='posCheckBoxData.length && $index == 0 '>
+        
+        <div class='nrNumber' style='width:770px'>
+            <div class='rowNumber'>
+                <div class="form-group form-md-line-input pcbdbRN">
+                    <div class="col-md-10 md-checkbox-inline" style='width:100%; '>
+                        <div class="md-checkbox has-success ng-scope" ng-repeat="(k,v) in posCheckBoxData">
+                            <input type="checkbox" ng-model="selectPosCheckbox[k]" value="{{k}}" id="checkbox{{$id}}{{k}}" ng-click='clickSelectPos()' class="md-check selectPos ng-pristine ng-untouched ng-valid ng-not-empty">
+                            <label for="checkbox{{$id}}{{k}}" class="ng-binding"> <span></span> <span class="check"></span> <span class="box"></span>{{v}}</label> 
+                        </div>
+                        <span class="tishi">您选择了{{play.selectPos.length}}个位置,系统自动根据位置组合成{{faCount?faCount:0}}个方案。</span>
+                    </div> <span class="help-block">{{text}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show='!posCheckBoxData.length || $index > 0 ' class='rowbox'>
+        <div class='nrTitle'>
+            <div class='rowNumber'>
+                <a href='' class='posname'>{{v}}<i><em></em></i></a>
+            </div>
+        </div>
+        <div class='nrNumber'>
+            <div class='rowNumber'>
+                <a href='javascript:;' ng-repeat="(codek,code) in codes[k] track by $index" ng-class='{"active":selectCode[k][code-codes[k][0]]}' ng-click='chooseNumber(k,codek)'>{{code}}</a>
+            </div>
+        </div>
+        <div class='nrNumberBtn' ng-show="play.codeZone.btn!==false">
+            <div class='rowNumber'>
+                <a href='javascript:;' ng-click='addBtn(k,"all")'>全</a>
+                <a href='javascript:;' ng-click='addBtn(k,"big")'>大</a>
+                <a href='javascript:;' ng-click='addBtn(k,"small")'>小</a>
+                <a href='javascript:;' ng-click='addBtn(k,"odd")'>单</a>
+                <a href='javascript:;' ng-click='addBtn(k,"even")'>双</a>
+                <a href='javascript:;' ng-click='addBtn(k,"clear")'>清</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 单式 -->
+<div class='numberSingle' ng-show='play.codeSelect == "single"'>
+    <div class='w262 fl nsBtns'>
+        <label>请输入注单：</label>
+        <a href='javascript:;' class='codeFilter nsBtn' ng-click='clearRepeat()'>删除重复</a>
+        <a href='javascript:;' class='codeClear nsBtn' ng-click='clearCode()'>清空</a>
+    </div>
+    <div class='w590 fl'>
+        <textarea ng-model='singleCode' id='singleCodeTextarea' placeholder="每一个号码之间请用 空格,逗号(,),换行,或者分号(;)隔开"></textarea>
+    </div>
+</div>
+</div>
+    <script>
+    var testJson = 
+'{"id":"3","game_id":"1","pid":"149","title":"\u590d\u5f0f","typeSetRule":null,"codeLength":"5","codeBidLength":"5","codeBetLength":"5","codeBetMultiple":"1","maxBetAmount":null,"codeZone":"{\"title\":[\"\\u4e07\\u4f4d\",\"\\u5343\\u4f4d\",\"\\u767e\\u4f4d\",\"\\u5341\\u4f4d\",\"\\u4e2a\\u4f4d\"],\"code\":[\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\"],\"betCount\":[\"1\",\"1\",\"1\",\"1\",\"1\"],\"posNum\":[\"1\",\"1\",\"1\",\"1\",\"1\"],\"betNum\":[\"1\",\"1\",\"1\",\"1\",\"1\"]}","codeRepeat":"1","codeType":"compound","codeSelect":"directly","codeReg":"^[0-9]{5}$","explain":"\u6bcf\u4f4d\u81f3\u5c11\u9009\u62e9\u4e00\u4e2a\u53f7\u7801\uff0c\u7ade\u731c\u5f00\u5956\u53f7\u7801\u7684\u5168\u90e8\u4e94\u4f4d\uff0c\u53f7\u7801\u548c\u4f4d\u7f6e\u90fd\u5bf9\u5e94\u5373\u4e2d\u5956","explainDetail":null,"explame":null,"sort":null,"oneAmount":"2.00","bonus":"180000.000","allBonus":"200000.000","selectRule":"{\"codeZone\":{\"code\":[\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\",\"0|1|2|3|4|5|6|7|8|9\"],\"title\":[\"\\u4e07\\u4f4d\",\"\\u5343\\u4f4d\",\"\\u767e\\u4f4d\",\"\\u5341\\u4f4d\",\"\\u4e2a\\u4f4d\"]}}","returnStep":"0.100","returnAmount":"200.000","status":"1","sysReturn":"10","maxReturn":"9","bingoType":"normal","bingoCode":"1|2|3|4|5","bingoRule":"\"null\"","bingoSortOrder":"1","type":null}';
+    function cl(msg){
+        console.log(msg);
+    } 
+    function appapi(param){
+        var obj = JSON.parse(param);
+        var ele = document.querySelector("[ng-controller="+obj['action']+"]");
+        angular.element(ele).scope().test(obj);
+    }
+    function clearCode(param){
+        
+        var ele = document.querySelector("[ng-controller=selectCode]");
+        angular.element(ele).scope().clearCode();
+        
+    }
+    setTimeout(function(){
+        // var j = {};
+        // j.selectRule = testJson.parseJSON();
+        // j['action'] = 'selectCode';
+         
+        //appapi(j);
+     },1000);
+    function appapiout(action,param){  
+        alert(JSON.stringify(param));
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+package com.xiongyuan.lottery.secondpage.activity;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.secondpage.adapter.MoreActivityAdapter;
+
+import butterknife.BindView;
+
+public class MoreActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titleName;
+    @BindView(R.id.more_list_view)
+    ListView moreListView;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_more;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titleName.setText("更多活动");
+    }
+
+    @Override
+    public void initData() {
+        MoreActivityAdapter adapter=new MoreActivityAdapter(this);
+        moreListView.setAdapter(adapter);
+    }
+}

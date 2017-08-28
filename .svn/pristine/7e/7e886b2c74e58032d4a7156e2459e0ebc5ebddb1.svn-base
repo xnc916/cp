@@ -1,0 +1,81 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class DrawMoneyActivity_ViewBinding implements Unbinder {
+  private DrawMoneyActivity target;
+
+  private View view2131558653;
+
+  private View view2131558552;
+
+  @UiThread
+  public DrawMoneyActivity_ViewBinding(DrawMoneyActivity target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public DrawMoneyActivity_ViewBinding(final DrawMoneyActivity target, View source) {
+    this.target = target;
+
+    View view;
+    target.drawMoneyMoney = Utils.findRequiredViewAsType(source, 2131558550, "field 'drawMoneyMoney'", EditText.class);
+    view = Utils.findRequiredView(source, 2131558653, "field 'titleLeft' and method 'click'");
+    target.titleLeft = Utils.castView(view, 2131558653, "field 'titleLeft'", TextView.class);
+    view2131558653 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.drawMoneyBankName = Utils.findRequiredViewAsType(source, 2131558548, "field 'drawMoneyBankName'", TextView.class);
+    target.DrawMoneyLv = Utils.findRequiredViewAsType(source, 2131558553, "field 'DrawMoneyLv'", ListView.class);
+    target.drawMoneyPlay = Utils.findRequiredViewAsType(source, 2131558551, "field 'drawMoneyPlay'", EditText.class);
+    view = Utils.findRequiredView(source, 2131558552, "field 'drawMoneyTrueM' and method 'click'");
+    target.drawMoneyTrueM = Utils.castView(view, 2131558552, "field 'drawMoneyTrueM'", Button.class);
+    view2131558552 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.drawMoneyCardNum = Utils.findRequiredViewAsType(source, 2131558549, "field 'drawMoneyCardNum'", TextView.class);
+    target.drawMoneyAccountName = Utils.findRequiredViewAsType(source, 2131558547, "field 'drawMoneyAccountName'", TextView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    DrawMoneyActivity target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.drawMoneyMoney = null;
+    target.titleLeft = null;
+    target.drawMoneyBankName = null;
+    target.DrawMoneyLv = null;
+    target.drawMoneyPlay = null;
+    target.drawMoneyTrueM = null;
+    target.drawMoneyCardNum = null;
+    target.drawMoneyAccountName = null;
+
+    view2131558653.setOnClickListener(null);
+    view2131558653 = null;
+    view2131558552.setOnClickListener(null);
+    view2131558552 = null;
+  }
+}

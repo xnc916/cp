@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xiongyuan.lottery">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".EasyShopApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".secondpage.activity.MoreActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".mypage.activity.PersonalInformationActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".mypage.activity.MySettings" />
+        <activity android:name=".mypage.activity.ProxyAccountActivity" />
+        <activity android:name=".mypage.activity.TeamReportActivity" />
+        <activity android:name=".mypage.activity.PersonalActivity" />
+        <activity android:name=".mypage.activity.StatisticsTodayActivity" />
+        <activity android:name=".homepage.activity.TextItemActivity" />
+        <activity android:name=".mypage.activity.MyMessageActivity" />
+        <activity android:name=".mypage.activity.CashTransactionActivity" />
+        <activity android:name=".mypage.activity.FlowDetailsActivity" />
+        <activity
+            android:name=".mypage.activity.QRCodeActivity"
+            android:theme="@style/QRcodeTheme" />
+        <activity android:name=".mypage.activity.DetailsActivity" />
+        <activity android:name=".mypage.activity.RegisterLinkActivity" />
+        <activity android:name=".mypage.activity.WithdrawalActivity" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 集成line客户端登录授权，需要添如下格式的过滤器 -->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".mypage.activity.withdrawal.WithdrawalActivity" />
+        <activity android:name=".mypage.activity.DrawMoneyActivity" />
+        <activity android:name=".mypage.activity.ReadMessageActivity" />
+        <activity android:name=".mypage.activity.HelpCenterActivity" />
+        <activity android:name=".mypage.activity.ModifyRebateActivity" />
+        <activity android:name=".thirdpage.activity.LotteryDetailsActivity" />
+        <activity android:name=".mypage.activity.AddManageDetails" />
+        <activity android:name=".mypage.activity.DrawMoneyActivity" />
+        <activity android:name=".mypage.activity.HelpeCenterNewActivity" />
+        <activity android:name=".mypage.activity.HelpCenterNewtActivity" />
+        <activity android:name=".secondpage.activity.EventdetailsActivity" />
+        <activity android:name=".mypage.activity.RecordNumberActivity" />
+        <activity android:name=".homepage.activity.PlayallActivity" />
+        <activity android:name=".homepage.activity.PKActivity" />
+        <activity android:name=".mypage.activity.RecordNumberItemActivity" />
+        <activity android:name=".homepage.activity.CodeHistoryActivity" />
+        <activity android:name=".homepage.activity.BetActivity"/>
+        <activity android:name=".secondpage.activity.IntegralActivity"/>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+
+</manifest>

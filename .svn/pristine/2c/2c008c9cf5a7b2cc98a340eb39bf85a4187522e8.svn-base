@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\fab_bg_mini.png",
+        "source": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_mini.png"
+    },
+    {
+        "merged": "F:\\AppCheck\\App\\library\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\fab_bg_normal.png",
+        "source": "F:\\AppCheck\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_normal.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\library\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\fab_bg_normal.png",
+        "source": "E:\\caipiao\\trunk\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_normal.png"
+    },
+    {
+        "merged": "F:\\AppCheck\\App\\library\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\fab_bg_mini.png",
+        "source": "F:\\AppCheck\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_mini.png"
+    }
+]

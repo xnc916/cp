@@ -1,0 +1,202 @@
+package com.xiongyuan.lottery.mypage.fragment;
+
+
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.widget.ListView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.bean.LoginEvent;
+import com.xiongyuan.lottery.mypage.activity.CashTransactionActivity;
+import com.xiongyuan.lottery.mypage.adapter.TodayRechargeAdapter;
+import com.xiongyuan.lottery.mypage.bean.TodayRechargeBean;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import butterknife.BindView;
+import okhttp3.Call;
+import okhttp3.Response;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class FragmentTodayRecharge extends BaseFragment {
+    @BindView(R.id.list_today_recharge)
+    ListView listView;
+    private static int mSerial=0;
+    private int mTabPos=0;
+    private String userId;
+    private TodayRechargeAdapter mAdapter;
+    private ArrayList<TodayRechargeBean> arrayList;
+    private ArrayList<TodayRechargeBean> list;
+    private Handler handler = new Handler(){
+        public void handleMessage(android.os.Message msg) {
+            //这里执行加载数据的操作
+           getBetLogs(userId,mTabPos);
+        };
+    };
+
+    public FragmentTodayRecharge(int serial){
+        mSerial = serial;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_page_today_recharge;
+    }
+    public void sendMessage(){
+        Message message = handler.obtainMessage();
+        message.sendToTarget();
+    }
+
+    public void setTabPos(int mTabPos) {
+        this.mTabPos = mTabPos;
+    }
+    @Override
+    public void initView() {
+
+        mAdapter=new TodayRechargeAdapter(getActivity());
+        listView.setAdapter(mAdapter);
+        arrayList=new ArrayList<>();
+        list=new ArrayList<>();
+        //设置页和当前页一致时加载，防止预加载
+        if ( mTabPos== mSerial) {
+            sendMessage();
+        }
+    }
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        //将获取的数据展示在界面上
+        userId = event.getUserId();
+
+    }
+    @Override
+    public void initData() {
+
+    }
+    //投注记录
+    private void getBetLogs(String userId,int n) {
+        if (arrayList!=null){
+            arrayList.clear();
+        }
+        OkHttpUtils.post()
+                .url(Constant.URL)
+                .addParams("action", "Users.getBetLogs")
+                .addParams("user_id", userId)
+                .addParams("type","1")
+                .build()
+                .execute(new Callback<String>() {
+                    @Override
+                    public String parseNetworkResponse(Response response, int i) throws Exception {
+                        String s = response.body().string();
+                        return s;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        ToastUtils.showToast(getActivity(), "网络错误");
+                    }
+
+                    @Override
+                    public void onResponse(String o, int i) {
+                        Log.e("==-投注记录-==", o);
+                        try {
+                            JSONObject jsonObject = new JSONObject(o);
+                            String errormsg = jsonObject.optString("errormsg");
+                            if (errormsg.equals("")) {
+                                JSONObject object = jsonObject.optJSONObject("result");
+                                JSONArray data = object.optJSONArray("data");
+                                if (data.length()>0){
+                                    for (int j=0;j<data.length();j++){
+                                        JSONObject dataObject = data.optJSONObject(j);
+                                        String issue = dataObject.optString("issue");
+                                        String gameTitle = dataObject.optString("gameTitle");
+                                        String betAmount = dataObject.optString("betAmount");
+                                        String status = dataObject.optString("status");
+                                        String winAmount = dataObject.optString("winAmount");
+                                        String addTime = dataObject.optString("addTime");
+                                        String date = stampToDate(addTime);
+                                        arrayList.add(new TodayRechargeBean(issue,gameTitle,betAmount,status,winAmount,date));
+                                    }
+                                    getBetLogsItem(arrayList,n);
+                                    Log.e("==11==",n+"");
+                                }
+                            } else {
+                                ToastUtils.showToast(getActivity(), errormsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+    }
+
+    private void getBetLogsItem(ArrayList<TodayRechargeBean> arrayList, int n) {
+        switch (n){
+            case 0:
+                mAdapter.refresh(arrayList);
+                break;
+            case 1:
+                getList(arrayList,"-1");
+                break;
+            case 2:
+                getList(arrayList,"0");
+                break;
+            case 3:
+                getList(arrayList,"1");
+                break;
+            case 4:
+                getList(arrayList,"2");
+                break;
+            case 5:
+                getList(arrayList,"3");
+                break;
+        }
+    }
+    private void getList(ArrayList<TodayRechargeBean> arrayList,String i) {
+        if (list!=null) {
+            list.clear();
+        }
+        for (int j=0;j<arrayList.size();j++){
+            TodayRechargeBean todayRechargeBean = arrayList.get(j);
+            if (todayRechargeBean.getStatus().equals(i)){
+                String issue = todayRechargeBean.getIssue();
+                String gameTitle = todayRechargeBean.getGameTitle();
+                String betAmount = todayRechargeBean.getBetAmount();
+                String status = todayRechargeBean.getStatus();
+                String winAmount = todayRechargeBean.getWinAmount();
+                String addTime = todayRechargeBean.getAddTime();
+                list.add(new TodayRechargeBean(issue,gameTitle,betAmount,status,winAmount,addTime));
+            }
+        }
+            mAdapter.refresh(list);
+
+    }
+    /*
+* 将时间戳转换为时间
+*/
+    public static String stampToDate(String s){
+        String res;
+        SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        long lt = Long.valueOf(s);
+        Date date = new Date(lt*1000);
+        res = simpleDateFormat.format(date);
+        return res;
+    }
+}

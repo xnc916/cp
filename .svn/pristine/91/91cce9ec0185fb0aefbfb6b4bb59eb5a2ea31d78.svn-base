@@ -1,0 +1,57 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.activity;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class MySettings_ViewBinding implements Unbinder {
+  private MySettings target;
+
+  private View view2131558724;
+
+  @UiThread
+  public MySettings_ViewBinding(MySettings target) {
+    this(target, target.getWindow().getDecorView());
+  }
+
+  @UiThread
+  public MySettings_ViewBinding(final MySettings target, View source) {
+    this.target = target;
+
+    View view;
+    target.lv2 = Utils.findRequiredViewAsType(source, 2131558614, "field 'lv2'", ListView.class);
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558725, "field 'titleName'", TextView.class);
+    target.lv1 = Utils.findRequiredViewAsType(source, 2131558613, "field 'lv1'", ListView.class);
+    view = Utils.findRequiredView(source, 2131558724, "method 'click'");
+    view2131558724 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    MySettings target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.lv2 = null;
+    target.titleName = null;
+    target.lv1 = null;
+
+    view2131558724.setOnClickListener(null);
+    view2131558724 = null;
+  }
+}

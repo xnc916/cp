@@ -1,0 +1,139 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.secondpage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class SecondFragment_ViewBinding implements Unbinder {
+  private SecondFragment target;
+
+  private View view2131558766;
+
+  private View view2131558760;
+
+  private View view2131558756;
+
+  private View view2131558757;
+
+  private View view2131558758;
+
+  private View view2131558767;
+
+  @UiThread
+  public SecondFragment_ViewBinding(final SecondFragment target, View source) {
+    this.target = target;
+
+    View view;
+    target.subjectTvIntroEnd1 = Utils.findRequiredViewAsType(source, 2131558764, "field 'subjectTvIntroEnd1'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558766, "field 'rlCzqhb' and method 'click'");
+    target.rlCzqhb = Utils.castView(view, 2131558766, "field 'rlCzqhb'", RelativeLayout.class);
+    view2131558766 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558713, "field 'titleName'", TextView.class);
+    target.textView1 = Utils.findRequiredViewAsType(source, 2131558765, "field 'textView1'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558760, "field 'rlSclj' and method 'click'");
+    target.rlSclj = Utils.castView(view, 2131558760, "field 'rlSclj'", RelativeLayout.class);
+    view2131558760 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558756, "field 'tvImgJbjjp' and method 'click'");
+    target.tvImgJbjjp = Utils.castView(view, 2131558756, "field 'tvImgJbjjp'", TextView.class);
+    view2131558756 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.subjectIv = Utils.findRequiredViewAsType(source, 2131558690, "field 'subjectIv'", ImageView.class);
+    view = Utils.findRequiredView(source, 2131558757, "field 'tvImgJjzz' and method 'click'");
+    target.tvImgJjzz = Utils.castView(view, 2131558757, "field 'tvImgJjzz'", TextView.class);
+    view2131558757 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558758, "field 'tvImgZzyhq' and method 'click'");
+    target.tvImgZzyhq = Utils.castView(view, 2131558758, "field 'tvImgZzyhq'", TextView.class);
+    view2131558758 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.subjectTvIntroEnd = Utils.findRequiredViewAsType(source, 2131558693, "field 'subjectTvIntroEnd'", TextView.class);
+    target.subjectTvIntro1 = Utils.findRequiredViewAsType(source, 2131558762, "field 'subjectTvIntro1'", TextView.class);
+    target.subjectTvName1 = Utils.findRequiredViewAsType(source, 2131558763, "field 'subjectTvName1'", TextView.class);
+    target.subjectTvName = Utils.findRequiredViewAsType(source, 2131558692, "field 'subjectTvName'", TextView.class);
+    target.subjectIv1 = Utils.findRequiredViewAsType(source, 2131558761, "field 'subjectIv1'", ImageView.class);
+    target.textView = Utils.findRequiredViewAsType(source, 2131558694, "field 'textView'", TextView.class);
+    target.subjectTvIntro = Utils.findRequiredViewAsType(source, 2131558691, "field 'subjectTvIntro'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558767, "method 'click'");
+    view2131558767 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    SecondFragment target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.subjectTvIntroEnd1 = null;
+    target.rlCzqhb = null;
+    target.titleName = null;
+    target.textView1 = null;
+    target.rlSclj = null;
+    target.tvImgJbjjp = null;
+    target.subjectIv = null;
+    target.tvImgJjzz = null;
+    target.tvImgZzyhq = null;
+    target.subjectTvIntroEnd = null;
+    target.subjectTvIntro1 = null;
+    target.subjectTvName1 = null;
+    target.subjectTvName = null;
+    target.subjectIv1 = null;
+    target.textView = null;
+    target.subjectTvIntro = null;
+
+    view2131558766.setOnClickListener(null);
+    view2131558766 = null;
+    view2131558760.setOnClickListener(null);
+    view2131558760 = null;
+    view2131558756.setOnClickListener(null);
+    view2131558756 = null;
+    view2131558757.setOnClickListener(null);
+    view2131558757 = null;
+    view2131558758.setOnClickListener(null);
+    view2131558758 = null;
+    view2131558767.setOnClickListener(null);
+    view2131558767 = null;
+  }
+}

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\AppCheck\\App\\library\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\fab_bg_normal.png",
+        "source": "F:\\AppCheck\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_normal.png"
+    },
+    {
+        "merged": "F:\\AppCheck\\App\\library\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4\\fab_bg_mini.png",
+        "source": "F:\\AppCheck\\App\\library\\src\\main\\res\\drawable-xxxhdpi\\fab_bg_mini.png"
+    }
+]

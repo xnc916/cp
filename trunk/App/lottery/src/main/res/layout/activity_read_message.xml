@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiongyuan.lottery.mypage.activity.ReadMessageActivity">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/default_head_bar_back_img" />
+    <TextView
+        android:id="@+id/read_massage_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="好好"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/read_masage_contnet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="54564pppppppppppppppppppppppppppppppppppppppppppppp\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m\no\no\l\nl\nk\nk\m"
+        android:singleLine="false"/>
+    </ScrollView>
+</LinearLayout>

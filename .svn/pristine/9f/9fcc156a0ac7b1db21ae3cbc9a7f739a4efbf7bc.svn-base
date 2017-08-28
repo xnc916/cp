@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\ShareSDK-Wechat-Moments-2.8.3.jar"
+        revision="25.0.2"
+        sha1="415c1cb912f11e414e6beaf1e59090c154f6da8d">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\ShareSDK-Wechat-Moments-2.8.3-e9c01db169012f79f0673efa8010fc7736dd6235.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\ShareSDK-Wechat-Favorite-2.8.3.jar"
+        revision="25.0.2"
+        sha1="0be6c30c87d2213d57d60adf04d4567639603070">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\ShareSDK-Wechat-Favorite-2.8.3-4a399e7d6c3ca3a5f2919ff7a14249e2c651a1d0.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\ShareSDK-Core-2.8.3.jar"
+        revision="25.0.2"
+        sha1="da4b0def0be4d4be0d3460638e087d01f60347c0">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\ShareSDK-Core-2.8.3-c3e0644fffb90dd464fd387cd2b8620dec4c3d70.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\ShareSDK-Wechat-2.8.3.jar"
+        revision="25.0.2"
+        sha1="6c77dd3832635149e694df173896f81e1e2d07aa">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\ShareSDK-Wechat-2.8.3-56b730094f587540381b5612bcd106643e3f9b37.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\454b5116f48f255af33d06a6d73500c827056b76\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-dd99ab689b17d7f25241a31677b3c62a2d73db85.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\49de268933acb8463d06202870ac4d32348cae2f\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-aa0f14c91a8d84b226e122dde9b091da1d9e701d.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\f6086a6ec082d403fdc7cf56932884fb55122595\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="e5636a75d66538526b09a71b0ef3f5de8ffeca61">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-532cfaf5292741756aafc438d502be1694f8dcbc.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\MobCommons-2017.0412.1554.jar"
+        revision="25.0.2"
+        sha1="f93319b520c12b41265a55d1ccacde97b9f18a9c">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\MobCommons-2017.0412.1554-063005b5ad07530e4b76022b0d5aaf37baeae3ca.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\5c431b8708b89654d40e8e7455636306932064a3\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-5a48e3183989ddedf5b36067299ba81bd5b3602e.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\bc2a9abfb8c29e55c8fb2682507a00b24e8469d7\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-cb23f259799f0fe49deadf62704b4d6d1f3b9b81.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\okhttp-3.4.1.jar"
+        revision="25.0.2"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\okhttp-3.4.1-9bf75ed44dc6bd87a2d424f6370c585270b184bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\3955a31ad650d97261a832c521486f4ac8992e1c\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-71d5ff74dce58281be81fd2452daca61229aea38.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\okhttputils-2_6_2.jar"
+        revision="25.0.2"
+        sha1="0b58ea597d7d7a6ef0ec42ae3994985f7e86553f">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\okhttputils-2_6_2-e15f5e2007ae7adc401510c6e2c3a387dbccb7bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        revision="25.0.2"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\okhttp-3.4.1-22b8dba980a3e3aab181f01ec2a000248ce50368.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\fc615723ec87a1863f1dede5a60f9a1a45fec080\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-53bd81ca97b2d0772ec3f56926398b8c4e49b1d9.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\ShareSDK-Wechat-Core-2.8.3.jar"
+        revision="25.0.2"
+        sha1="65d3d26aac0c67984e4612539017f7a5f4bd6507">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\ShareSDK-Wechat-Core-2.8.3-dcc5548a04806f8af45aa6dfaa9cb3a38a3d53a0.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\393e8e0111c4865ddecf4865cd6cabea1355dee0\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-ea9fe067972c9388bd0bc8625573bd04928d3b80.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\5e4e096eae135a00fc4d7df5076331b97f2b6da8\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-b3d80dac911f5c686ee70f7e404fbb9c79af0c98.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\19a57be7916bf276bff7be7e16c1d23dcf9d62a4\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-e1f555f0bb60c303c252207d955dd3099778aa97.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\f94ef1bbeab29a6ab7a88b4088eb91129f4656bb\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-fbc4112d19b458bb93cbbf070de8edef570b6fc3.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        revision="25.0.2"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\okio-1.9.0-928444889f891988e234c9daa444d50464e21a70.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\2a6e6cbe4a1cfa241ca111a7b063ac02a1c1c93a\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="3ee4a8ffd59523b6178b8b1f0a37416b9c0b28a7">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-ebd3fa35e40b90dc246b2bb362b013da0efd6713.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\06b46d3b6fe2961736b91a0e30a00428c4c6d0c7\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="1c32ab2e2421b179912b718196eee2277ba1c7c9">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-d6f8ecf5f8c57dc50a4b44eaf2bdf9a6a9ef8084.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        revision="25.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\butterknife-annotations-8.5.1-fa98a8017bb4c712ea6b1a19b2e7396d2ee20b64.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        revision="25.0.2"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\logging-interceptor-3.4.1-bb15cabf46364041592fdac71a4caea262ddb95d.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\868a034df045c4ca6fcbce3945c82a2b1fcdf603\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-1b93d69e93b45645fe8a2914a10522fe09c650c2.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\28fe7d64963080d9171545e45be3115e085227e7\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-195f7b5e05f70262b0e083646dad235af1ed161f.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\6fd9f8e56bc90ec2592edd043c1bcd4ac8886a61\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-3e6d7d6f49687f83f0c223c40c6de1a1430ef3be.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-2047ac35e3eb8cddfd74602686db55c86f3a992a.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\8d012c52a026ba88620d8892855069524dea75b4\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-d7ec5a61b1e4a7e514e57d8be72ba2de08599f57.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\MobTools-2017.0412.1554.jar"
+        revision="25.0.2"
+        sha1="ff1c0540ed5607fa34269a7adc63679e4fcfb714">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\MobTools-2017.0412.1554-36de2fd1249991a78fd47afe7f2319809d94396c.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\eventbus-3.0.0.jar"
+        revision="25.0.2"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\eventbus-3.0.0-591f6f9398f890dd64616304ae687df83e391d43.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\core-3.2.1.jar"
+        revision="25.0.2"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\core-3.2.1-1384ae6b7c28e2f426687624bac82725be70c8c2.jar" />
+    </item>
+    <item
+        jar="E:\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\constraint-layout-solver-1.0.2-1fab95ed971bcbde83d7e166f54a6335562e9872.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        revision="25.0.2"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\gson-2.8.0-53836fad017c097939326bc71ceb014ec14d2ef2.jar" />
+    </item>
+    <item
+        jar="E:\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\support-annotations-25.3.1-10ad9c38becafe5b8de337aa424fc6c6b8f0ee01.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\53a4819ee6d1967b856ce9dc1437d104e3bd246f\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-0dc09c39a1ae8fefb21c342a479d8af81364fd17.jar" />
+    </item>
+    <item
+        jar="E:\lottery\trunk\App\lottery\libs\okio-1.8.0.jar"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\okio-1.8.0-4c4ac08fb623ea5a6bfe65202fda0f3fff2f3b68.jar" />
+    </item>
+    <item
+        jar="C:\Users\gameben\.android\build-cache\6632048e072d2f3cc5eaa6c157c9cd0d0907acb4\output\jars\classes.jar"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="E:\lottery\trunk\App\lottery\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-90a74a8988d54e78cb8134363acffd69fbcd4a0f.jar" />
+    </item>
+
+</items>

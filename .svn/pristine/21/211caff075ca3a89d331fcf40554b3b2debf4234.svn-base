@@ -1,0 +1,73 @@
+package com.xiongyuan.lottery;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+
+import com.xiongyuan.lottery.base.BaseActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class SplashActivity extends Activity {
+    @BindView(R.id.iv_splash)
+    ImageView ivSplash;
+    private AlphaAnimation alphaAnimation;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_splash);
+        ButterKnife.bind(this);
+        initView();
+
+    }
+
+
+    private void initView() {
+        setAnimator();
+
+
+    }
+    //设置动画
+    private void setAnimator() {
+        alphaAnimation = new AlphaAnimation(0.5f,1);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnimation.setDuration(1000);
+        alphaAnimation.setDuration(2000);
+        AnimationSet set = new AnimationSet(false);
+        set.addAnimation(alphaAnimation);
+        set.addAnimation(scaleAnimation);
+        ivSplash.setAnimation(set);
+
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                finish();
+            }
+        });
+    }
+}

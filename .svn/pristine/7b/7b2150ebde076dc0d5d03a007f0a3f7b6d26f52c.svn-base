@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\App\lottery\libs\okhttputils-2_6_2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0b58ea597d7d7a6ef0ec42ae3994985f7e86553f">
+        <dex dex="F:\App\lottery\build\intermediates\pre-dexed\debug\okhttputils-2_6_2_96896099760ccd7f419cab19fcd379d12fcceae8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\App\lottery\libs\okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="F:\App\lottery\build\intermediates\pre-dexed\debug\okio-1.8.0_832369e7ea6b16ca10ad321c8afdfaaa1de0a9ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\App\lottery\libs\okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="F:\App\lottery\build\intermediates\pre-dexed\debug\okhttp-3.4.1_deee21ebddac18d0cd6e0ef628e6cb9743c02ab6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\App\lottery\libs\eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="F:\App\lottery\build\intermediates\pre-dexed\debug\eventbus-3.0.0_ba61f312016ecb2321bbd6a38fb07532a07dbf4d.jar" />
+    </item>
+
+</items>

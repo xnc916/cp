@@ -1,0 +1,36 @@
+package com.xiongyuan.lottery.homepage.activity;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+
+public class PlayallActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_playall);
+
+        String s = getIntent().getStringExtra("gameid");
+        Call call = LotteryClient.getInstance().getGamePaly(s);
+        call.enqueue(new UICallBack() {
+            @Override
+            public void onFailureUI(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponseUI(Call call, String body) {
+                Log.e("+++++++++",body);
+            }
+        });
+    }
+}

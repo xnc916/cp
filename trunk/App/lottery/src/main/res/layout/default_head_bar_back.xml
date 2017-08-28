@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nac_layout"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:background="@android:color/transparent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTabbar"/>
+    <TextView
+        android:id="@+id/title_left_s"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/leftjt"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
+        android:singleLine="false"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/title_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="10dp"
+        android:visibility="visible"
+        android:singleLine="false"
+        android:layout_toRightOf="@+id/title_left_s"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/title_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" />
+
+
+</RelativeLayout>

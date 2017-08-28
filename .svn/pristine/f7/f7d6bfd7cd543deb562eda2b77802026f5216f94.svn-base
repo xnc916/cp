@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\button_icon_qiandao.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\button_icon_qiandao.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\logo.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\logo.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\button_icon_jbssq.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\button_icon_jbssq.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\max_min.png",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\mipmap-xxxhdpi\\max_min.png"
+    }
+]

@@ -1,0 +1,131 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.homepage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.paradoxie.autoscrolltextview.VerticalTextview;
+import com.xiongyuan.lottery.homepage.view.FadingScrollView;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class HomeFragment_ViewBinding implements Unbinder {
+  private HomeFragment target;
+
+  private View view2131558732;
+
+  private View view2131558735;
+
+  private View view2131558731;
+
+  private View view2131558733;
+
+  private View view2131558737;
+
+  private View view2131558736;
+
+  @UiThread
+  public HomeFragment_ViewBinding(final HomeFragment target, View source) {
+    this.target = target;
+
+    View view;
+    view = Utils.findRequiredView(source, 2131558732, "field 'homeTtjc' and method 'click'");
+    target.homeTtjc = Utils.castView(view, 2131558732, "field 'homeTtjc'", TextView.class);
+    view2131558732 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.text = Utils.findRequiredViewAsType(source, 2131558734, "field 'text'", VerticalTextview.class);
+    target.layout = Utils.findRequiredViewAsType(source, 2131558702, "field 'layout'", RelativeLayout.class);
+    view = Utils.findRequiredView(source, 2131558735, "field 'homeYxwfjs' and method 'click'");
+    target.homeYxwfjs = Utils.castView(view, 2131558735, "field 'homeYxwfjs'", TextView.class);
+    view2131558735 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558731, "field 'homeKjxx' and method 'click'");
+    target.homeKjxx = Utils.castView(view, 2131558731, "field 'homeKjxx'", TextView.class);
+    view2131558731 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558733, "field 'homeJchd' and method 'click'");
+    target.homeJchd = Utils.castView(view, 2131558733, "field 'homeJchd'", TextView.class);
+    view2131558733 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.convenientBanner = Utils.findRequiredViewAsType(source, 2131558730, "field 'convenientBanner'", ConvenientBanner.class);
+    view = Utils.findRequiredView(source, 2131558737, "field 'homeGywm' and method 'click'");
+    target.homeGywm = Utils.castView(view, 2131558737, "field 'homeGywm'", TextView.class);
+    view2131558737 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    target.fadingScrollView = Utils.findRequiredViewAsType(source, 2131558729, "field 'fadingScrollView'", FadingScrollView.class);
+    target.titleName = Utils.findRequiredViewAsType(source, 2131558705, "field 'titleName'", TextView.class);
+    view = Utils.findRequiredView(source, 2131558736, "field 'homeCpzx' and method 'click'");
+    target.homeCpzx = Utils.castView(view, 2131558736, "field 'homeCpzx'", TextView.class);
+    view2131558736 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    HomeFragment target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.homeTtjc = null;
+    target.text = null;
+    target.layout = null;
+    target.homeYxwfjs = null;
+    target.homeKjxx = null;
+    target.homeJchd = null;
+    target.convenientBanner = null;
+    target.homeGywm = null;
+    target.fadingScrollView = null;
+    target.titleName = null;
+    target.homeCpzx = null;
+
+    view2131558732.setOnClickListener(null);
+    view2131558732 = null;
+    view2131558735.setOnClickListener(null);
+    view2131558735 = null;
+    view2131558731.setOnClickListener(null);
+    view2131558731 = null;
+    view2131558733.setOnClickListener(null);
+    view2131558733 = null;
+    view2131558737.setOnClickListener(null);
+    view2131558737 = null;
+    view2131558736.setOnClickListener(null);
+    view2131558736 = null;
+  }
+}

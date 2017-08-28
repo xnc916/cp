@@ -1,0 +1,194 @@
+package com.xiongyuan.lottery.base;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import okhttp3.Call;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+
+/**
+ * Created by gameben on 2017-06-06.
+ */
+
+public class LotteryClient {
+
+        private static LotteryClient lotteryClient;
+
+        private OkHttpClient okHttpClient;
+        private Gson gson;
+
+        public static LotteryClient getInstance() {
+            if (lotteryClient == null) {
+                lotteryClient = new LotteryClient();
+            }
+            return lotteryClient;
+        }
+
+
+        private LotteryClient() {
+            // 设置GSON的非严格模式setLenient()
+            gson = new GsonBuilder().setLenient().create();
+            //初始化日志拦截器
+            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+            //设置拦截级别
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            okHttpClient = new OkHttpClient.Builder()
+                    //添加日志拦截器
+                    .addInterceptor(httpLoggingInterceptor)
+                    .build();
+
+        }
+
+        //生成注册链接码
+        public Call getRegisterLink(String uid, String maxr, String minR, String type){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","RegCode.add")
+                    .add("user_id",uid)
+                    .add("maxRebate",maxr)
+                    .add("minRebate",minR)
+                    .add("type",type)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+
+        //注册
+        public Call getRegister(String code, String username, String password, String repsw){
+            RequestBody requestbody = new FormBody.Builder()
+                    .add("action","Users.register")
+                    .add("code",code)
+                    .add("username",username)
+                    .add("password",password)
+                    .add("rePassword",repsw)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestbody)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //获取银行卡
+        public Call getBankcard(String uid){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Users.getBankCards")
+                    .add("user_id",uid)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //提现说明
+        public Call getReflectThat(String uid){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Users.getCashConf")
+                    .add("user_id",uid)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+
+        //余额提现
+        public Call getBalance(String uid, String moneynum, String bank_id, String bank_psw){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Users.cash")
+                    .add("user_id",uid)
+                    .add("amount",moneynum)
+                    .add("card_id",bank_id)
+                    .add("bankPassword",bank_psw)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //获取系统消息
+        public Call getSystemmsg(String uid){
+
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Messages.getSystems")
+                    .add("user_id",uid)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //保存已读消息状态
+        public Call getStatus(String uid, String msgid){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Messages.setRead")
+                    .add("user_id",uid)
+                    .add("id",msgid)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //取得彩种分类/玩法
+        public Call getGamePaly(String game_id){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Games.getData")
+                    .add("id",game_id)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //取得最近三期开奖时间
+        public Call getGameTime(String game_id){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Games.getCurIssue")
+                    .add("id",game_id)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+        //获取帮助菜单
+        public Call getHelpMenu(String uid){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","Users.getHelpCatalogs")
+                    .add("user_id",uid)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+
+        //获取文章
+        public Call getArticle(String uid,String menus_id){
+            RequestBody requestboy = new FormBody.Builder()
+                    .add("action","News.getNews")
+                    .add("user_id",uid)
+                    .add("id",menus_id)
+                    .build();
+            Request request = new Request.Builder()
+                    .url(Constant.URL)
+                    .post(requestboy)
+                    .build();
+            return okHttpClient.newCall(request);
+        }
+
+}

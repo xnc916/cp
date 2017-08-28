@@ -1,0 +1,41 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.adapter;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import butterknife.Unbinder;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class MyMessageAdapter$ViewHolder_ViewBinding implements Unbinder {
+  private MyMessageAdapter.ViewHolder target;
+
+  @UiThread
+  public MyMessageAdapter$ViewHolder_ViewBinding(MyMessageAdapter.ViewHolder target, View source) {
+    this.target = target;
+
+    target.myMessagTime = Utils.findRequiredViewAsType(source, 2131558697, "field 'myMessagTime'", TextView.class);
+    target.myMessageRead = Utils.findRequiredViewAsType(source, 2131558698, "field 'myMessageRead'", TextView.class);
+    target.myMessagContent = Utils.findRequiredViewAsType(source, 2131558696, "field 'myMessagContent'", TextView.class);
+    target.myMessagTvtitle = Utils.findRequiredViewAsType(source, 2131558695, "field 'myMessagTvtitle'", TextView.class);
+    target.myMessagImage = Utils.findRequiredViewAsType(source, 2131558694, "field 'myMessagImage'", ImageView.class);
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    MyMessageAdapter.ViewHolder target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.myMessagTime = null;
+    target.myMessageRead = null;
+    target.myMessagContent = null;
+    target.myMessagTvtitle = null;
+    target.myMessagImage = null;
+  }
+}

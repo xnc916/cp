@@ -1,0 +1,111 @@
+package com.xiongyuan.lottery.mypage.fragment;
+
+
+import android.util.Log;
+import android.widget.ListView;
+
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.bean.LoginEvent;
+import com.xiongyuan.lottery.customview.LoadingDialog;
+import com.xiongyuan.lottery.mypage.adapter.TeamStatisticsAdapter;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import okhttp3.Call;
+import okhttp3.Response;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class FragmentTeamStatistics extends BaseFragment {
+    @BindView(R.id.lv_team_statistics)
+    ListView lvTeam;
+    private ArrayList<String> mlist;
+    private TeamStatisticsAdapter adapter;
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_page_team_statistics;
+    }
+
+    @Override
+    public void initView() {
+        adapter=new TeamStatisticsAdapter(getActivity());
+        lvTeam.setAdapter(adapter);
+    }
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        //将获取的数据展示在界面上
+        String userId = event.getUserId();
+        getStatData(userId);
+    }
+    @Override
+    public void initData() {
+        mlist = new ArrayList<>();
+    }
+    //统计数据
+    public void  getStatData(String userId){
+        if (mlist != null) {
+            mlist.clear();
+        }
+        OkHttpUtils.post()
+                .url(Constant.URL)
+                .addParams("action","Users.getStatData")
+                .addParams("user_id",userId)
+                .addParams("type","2")
+                .build()
+                .execute(new Callback<String>() {
+                    @Override
+                    public String parseNetworkResponse(Response response, int i) throws Exception {
+                        String s= response.body().string();
+                        return s;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        ToastUtils.showToast(getActivity(),"网络错误");
+
+                    }
+
+                    @Override
+                    public void onResponse(String o, int i) {
+                        Log.e("==-统计数据-==", o+"---");
+
+                        try {
+                            JSONObject jsonObject=new JSONObject(o);
+                            String errormsg = jsonObject.optString("errormsg");
+                            if (errormsg.equals("")){
+                                JSONObject result = jsonObject.optJSONObject("result");
+                                mlist.add(result.optString("userCount"));
+                                mlist.add( result.optString("onlineCount"));
+                                mlist.add(result.optString("usable"));
+                                mlist.add( result.optString("newCount"));
+                                mlist.add( result.optString("winBet"));
+                                mlist.add( result.optString("betReturn"));
+                                mlist.add(result.optString("recharge"));
+                                mlist.add(result.optString("cashSuc"));
+                                adapter.refresh(mlist);
+                            }else{
+                                ToastUtils.showToast(getActivity(),errormsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+
+    }
+
+}

@@ -1,0 +1,79 @@
+package com.xiongyuan.lottery.secondpage.activity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseActivity;
+import com.xiongyuan.lottery.base.LotteryClient;
+import com.xiongyuan.lottery.base.UICallBack;
+import com.xiongyuan.lottery.secondpage.bean.FistResult;
+import com.xiongyuan.lottery.utils.ToastUtils;
+
+import java.io.IOException;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import okhttp3.Call;
+
+public class EventdetailsActivity extends BaseActivity {
+    @BindView(R.id.title_name)
+    TextView titlename;
+    @BindView(R.id.event_detail_tv)
+    TextView eventdetail;
+
+    private String title;
+    private String content;
+    private String userId;
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_eventdetails;
+    }
+
+    @Override
+    public void initView(Bundle savedInstanceState) {
+        titlename.setText(title);
+
+        if (title.equals("首充领奖")){
+            getFistChange();
+
+        }
+
+
+    }
+
+    @Override
+    public void initData() {
+        title = getIntent().getStringExtra("title");
+        content = getIntent().getStringExtra("content");
+        userId = getIntent().getStringExtra("uid");
+
+    }
+
+    @OnClick(R.id.title_left)
+    public void click(){
+        finish();
+    }
+
+    public void getFistChange() {
+
+        Call call = LotteryClient.getInstance().getFirstCharge(userId,"17");
+        call.enqueue(new UICallBack() {
+            @Override
+            public void onFailureUI(Call call, IOException e) {
+                ToastUtils.showToast(EventdetailsActivity.this,e.getMessage());
+            }
+
+            @Override
+            public void onResponseUI(Call call, String body) {
+                FistResult rest = new Gson().fromJson(body,FistResult.class);
+                content = rest.getErrormsg();
+                eventdetail.setText(content);
+                Log.e("++1111++",content);
+            }
+        });
+    }
+}

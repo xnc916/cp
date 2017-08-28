@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\anim_popupwindow_show.xml",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\anim\\anim_popupwindow_show.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\ffe970988aa658f955214e5d2d0b0224fd4d9b2d\\output\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\anim_popupwindow_hide.xml",
+        "source": "E:\\caipiao\\trunk\\App\\lottery\\src\\main\\res\\anim\\anim_popupwindow_hide.xml"
+    },
+    {
+        "merged": "E:\\caipiao\\trunk\\App\\lottery\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\gameben\\.android\\build-cache\\28fe7d64963080d9171545e45be3115e085227e7\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    }
+]

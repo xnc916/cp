@@ -1,0 +1,75 @@
+// Generated code from Butter Knife. Do not modify!
+package com.xiongyuan.lottery.mypage.fragment;
+
+import android.support.annotation.CallSuper;
+import android.support.annotation.UiThread;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import butterknife.Unbinder;
+import butterknife.internal.DebouncingOnClickListener;
+import butterknife.internal.Utils;
+import java.lang.IllegalStateException;
+import java.lang.Override;
+
+public class FragmentProxyAccount_ViewBinding implements Unbinder {
+  private FragmentProxyAccount target;
+
+  private View view2131558722;
+
+  private View view2131558721;
+
+  @UiThread
+  public FragmentProxyAccount_ViewBinding(final FragmentProxyAccount target, View source) {
+    this.target = target;
+
+    View view;
+    target.etProxyRePwd = Utils.findRequiredViewAsType(source, 2131558715, "field 'etProxyRePwd'", EditText.class);
+    target.etProxyMaxRebate = Utils.findRequiredViewAsType(source, 2131558716, "field 'etProxyMaxRebate'", EditText.class);
+    target.etProxyMinRebate = Utils.findRequiredViewAsType(source, 2131558717, "field 'etProxyMinRebate'", EditText.class);
+    target.radioGroup = Utils.findRequiredViewAsType(source, 2131558718, "field 'radioGroup'", RadioGroup.class);
+    target.etProxyAccount = Utils.findRequiredViewAsType(source, 2131558713, "field 'etProxyAccount'", EditText.class);
+    target.etProxyPwd = Utils.findRequiredViewAsType(source, 2131558714, "field 'etProxyPwd'", EditText.class);
+    target.rbDl = Utils.findRequiredViewAsType(source, 2131558719, "field 'rbDl'", RadioButton.class);
+    target.rbPh = Utils.findRequiredViewAsType(source, 2131558720, "field 'rbPh'", RadioButton.class);
+    view = Utils.findRequiredView(source, 2131558722, "method 'click'");
+    view2131558722 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+    view = Utils.findRequiredView(source, 2131558721, "method 'click'");
+    view2131558721 = view;
+    view.setOnClickListener(new DebouncingOnClickListener() {
+      @Override
+      public void doClick(View p0) {
+        target.click(p0);
+      }
+    });
+  }
+
+  @Override
+  @CallSuper
+  public void unbind() {
+    FragmentProxyAccount target = this.target;
+    if (target == null) throw new IllegalStateException("Bindings already cleared.");
+    this.target = null;
+
+    target.etProxyRePwd = null;
+    target.etProxyMaxRebate = null;
+    target.etProxyMinRebate = null;
+    target.radioGroup = null;
+    target.etProxyAccount = null;
+    target.etProxyPwd = null;
+    target.rbDl = null;
+    target.rbPh = null;
+
+    view2131558722.setOnClickListener(null);
+    view2131558722 = null;
+    view2131558721.setOnClickListener(null);
+    view2131558721 = null;
+  }
+}

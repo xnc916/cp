@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="address_view_confirm_text_color">#057dff</color>
+    <color name="address_view_title_text_color">#000000</color>
+    <color name="base_view_overlay_color">#60000000</color>
+    <color name="wheel_item_background_color">#F0F0F0</color>
+    <color name="wheel_item_select_text_color_default">#333333</color>
+    <color name="wheel_item_unselect_text_color_default">#999999</color>
+    <declare-styleable name="WheelItemView"><attr format="enum" name="wheel_item_view_gravity">
+            <enum name="center" value="0x11"/>
+            <enum name="left" value="0x03"/>
+            <enum name="right" value="0x05"/>
+        </attr><attr format="dimension" name="wheel_item_view_unselect_textsize"/><attr format="dimension" name="wheel_item_view_select_textsize"/><attr format="color" name="wheel_item_view_unselect_textcolor"/><attr format="color" name="wheel_item_view_select_textcolor"/><attr format="color" name="wheel_item_view_background"/></declare-styleable>
+    <dimen name="select_textsize_default">18sp</dimen>
+    <dimen name="unselect_textsize_default">18sp</dimen>
+    <string name="app_name">WheelPackerView</string>
+</resources>

@@ -1,0 +1,200 @@
+package com.xiongyuan.lottery.mypage.fragment;
+
+
+import android.content.Intent;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
+import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
+import com.xiongyuan.lottery.R;
+import com.xiongyuan.lottery.base.BaseFragment;
+import com.xiongyuan.lottery.base.Constant;
+import com.xiongyuan.lottery.bean.LoginEvent;
+import com.xiongyuan.lottery.mypage.activity.FlowDetailsActivity;
+import com.xiongyuan.lottery.mypage.adapter.SubordinateAccountAdapter;
+import com.xiongyuan.lottery.mypage.bean.SubordinateAccountItemBean;
+import com.xiongyuan.lottery.utils.ToastUtils;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.Callback;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
+import butterknife.BindView;
+import okhttp3.Call;
+import okhttp3.Response;
+
+/**
+ * Created by Administrator on 2017-05-12.
+ */
+
+public class FragmentSubordinateAccount extends BaseFragment {
+    @BindView(R.id.subordinate_account_list_view)
+    ListView listView;
+    @BindView(R.id.refreshLayout)
+    TwinklingRefreshLayout refreshLayout;
+    private ArrayList<SubordinateAccountItemBean> list;
+    private SubordinateAccountAdapter adapter;
+    private String userId;
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_page_subordinate_account;
+    }
+
+    @Override
+    public void initView() {
+
+
+        adapter=new SubordinateAccountAdapter(getActivity());
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(), FlowDetailsActivity.class);
+                intent.putExtra("userId",userId);
+                intent.putExtra("id",list.get(position).getId());
+                startActivity(intent);
+            }
+        });
+
+        SinaRefreshView headerView = new SinaRefreshView(getActivity());
+        headerView.setArrowResource(R.drawable.arrow);
+        headerView.setTextColor(0xff745D5C);
+        refreshLayout.setHeaderView(headerView);
+
+        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter() {
+            @Override
+            public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishRefreshing();
+                    }
+                }, 2000);
+            }
+
+            @Override
+            public void onLoadMore(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshLayout.finishLoadmore();
+                    }
+                }, 2000);
+            }
+        });
+
+
+}
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void onShowDataEvent(LoginEvent event) {
+        //将获取的数据展示在界面上
+        userId = event.getUserId();
+        getAccLogs(userId);
+
+    }
+    @Override
+    public void initData() {
+        list=new ArrayList<>();
+    }
+
+    //流水记录
+    public void  getAccLogs(String userId){
+        if (list!=null){
+            list.clear();
+        }
+        OkHttpUtils.post()
+                .url(Constant.URL)
+                .addParams("action","Users.getAccLogs")
+                .addParams("user_id",userId)
+                .addParams("type","2")
+                .addParams("page","1")
+                .build()
+                .execute(new Callback<String>() {
+                    @Override
+                    public String parseNetworkResponse(Response response, int i) throws Exception {
+                        String s= response.body().string();
+                        return s;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        ToastUtils.showToast(getActivity(),"网络错误");
+
+                    }
+
+                    @Override
+                    public void onResponse(String o, int i) {
+                        Log.e("==-流水记录-==", o+"---");
+
+                        try {
+                            JSONObject jsonObject=new JSONObject(o);
+                            String errormsg = jsonObject.optString("errormsg");
+                            if (errormsg.equals("")){
+                                JSONObject result = jsonObject.optJSONObject("result");
+                                JSONArray data = result.optJSONArray("data");
+                                for (int j=0;j<data.length();j++){
+                                    JSONObject object = data.optJSONObject(j);
+                                    String id = object.optString("id");
+                                    String addTime = object.optString("addTime");
+                                    String date = stampToDate(addTime);
+                                    String week = stampToWeek(addTime);
+                                    String usable = object.optString("usable");
+                                    String intro = object.optString("intro");
+                                    if (object.optString("intro").equals("null")){
+                                        intro = "";
+                                    }
+                                    String type = object.optString("type");
+                                    list.add(new SubordinateAccountItemBean(id,week,date,usable,intro,type));
+                                }
+                                adapter.refresh(list);
+                            }else{
+                                ToastUtils.showToast(getActivity(),errormsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+
+    }
+    /*
+    * 将时间戳转换为时间
+    */
+    public static String stampToDate(String s){
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd");
+        long lt = Long.valueOf(s);
+        Date date = new Date(lt*1000);
+        res = simpleDateFormat.format(date);
+        return res;
+    }
+    /*
+   * 将时间戳转换为星期
+   */
+    public static String stampToWeek(String s){
+        long lt = Long.valueOf(s);
+        Date dt = new Date(lt*1000);
+        String[] weekDays = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dt);
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+        if (w < 0)
+            w = 0;
+        return weekDays[w];
+    }
+}

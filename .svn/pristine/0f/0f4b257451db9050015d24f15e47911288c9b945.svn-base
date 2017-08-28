@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="_4a4a4a">#4a4a4a</color>
+    <color name="_ffffff">#ffffff</color>
+    <string name="app_name">indicator</string>
+    <style name="J_Dialog_Style">
+        <item name="windowActionBar">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>
